@@ -1,0 +1,1828 @@
+[
+   {
+      "tresc":"Urządzenie służące do nagrywania i odtwarzania wiadomości w telefonie komórkowym to: ",
+      "odp":[
+         "toner ",
+         "faks ",
+         "poczta głosowa",
+         "poczta elektroniczna "
+      ],
+      "odp_poprawna":"C",
+      "trudnosc": 0
+   },
+   {
+      "tresc":"Powłoka na naczyniach kuchennych zapobiegająca przywieraniu potraw to: ",
+      "odp":[
+         "poliester ",
+         "teflon",
+         "akryl ",
+         "winyl "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Bohaterem jakiej powieści Henryka Sienkiewicza jest Jurand ze Spychowa ? ",
+      "odp":[
+         "„W pustyni i w puszczy” ",
+         "„Quo Vadis” ",
+         "„Potop” ",
+         "„Krzyżacy”"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Kto został wiceprezesem Polskiego Związku Piłki Nożnej w 1999 roku ? ",
+      "odp":[
+         "Grzegorz Lato ",
+         "Zbigniew Boniek",
+         "Roman Kosecki ",
+         "Jan Tomaszewski "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Napój Anglików pijany tradycyjnie o piątej po południu to: ",
+      "odp":[
+         "oranżada ",
+         "kakao ",
+         "herbata",
+         "whisky "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"W której z wymienionych dziedzin algi znalazły szerokie zastosowanie ? ",
+      "odp":[
+         "w budownictwie ",
+         "w kosmetyce",
+         "w obuwnictwie ",
+         "w dziewiarstwie "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Wywar rosołowy to: ",
+      "odp":[
+         "bulion",
+         "żur ",
+         "wassersuppe ",
+         "bulion Ureya "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Flausz to tkanina używana na: ",
+      "odp":[
+         "bluzki ",
+         "fartuchy ",
+         "płaszcze",
+         "sfetry"
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Daszek z wyciągiem umieszczony nad kuchnią, służący do usuwania zapachów na zewnątrz to: ",
+      "odp":[
+         "lufcik ",
+         "wywietrznik ",
+         "okap",
+         "szyber "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Jakie imię nosi największy dzwon w Polsce ? ",
+      "odp":[
+         "August ",
+         "Zygmunt",
+         "Kazimierz ",
+         "Bolesław "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Który z poetów polskich pisał: „O szyby deszcz dzwoni, deszcz dzwoni jesienny” ? ",
+      "odp":[
+         "Jan Kasprowicz ",
+         "Leopold Staff",
+         "Jan Lechoń ",
+         "Julian Tuwim "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"W jakich jednostkach mierzy się długość i szerokość geograficzną ? ",
+      "odp":[
+         "godzinach i minutach ",
+         "metrach ",
+         "stopniach i minutach",
+         "milach "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Bawaria jest państwem związkowym: ",
+      "odp":[
+         "Francji ",
+         "Holandii ",
+         "Niemiec",
+         "Czech "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Jakie urządzenie służy do wykrywania, zapisywania i badania trzęsień ziemi ? ",
+      "odp":[
+         "polarymetr ",
+         "aerograf ",
+         "spektrometr ",
+         "sejsmograf"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Zbieranie z powierzchni rosołu ściętego białka to: ",
+      "odp":[
+         "szumowanie",
+         "peklowanie ",
+         "szpikowanie ",
+         "marynowanie "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Kto był gospodarzem Mistrzostw Europy w piłce nożnej w 2000 roku ? ",
+      "odp":[
+         "Francja ",
+         "Włochy ",
+         "Holandia i Belgia",
+         "Niemcy "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Twórcą jakiego imperium był Czyngis-chan ? ",
+      "odp":[
+         "japońskiego ",
+         "chińskiego ",
+         "tatarskiego ",
+         "mongolskiego"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Podwiązki służą do podtrzymywania: ",
+      "odp":[
+         "rajstop ",
+         "pończoch",
+         "spodni ",
+         "rajtuzów "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Nieprofesjonalny wykonawca roli aktorskiej w filmie to: ",
+      "odp":[
+         "naturalista ",
+         "kinoman ",
+         "dubler ",
+         "naturszczyk "
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Pulchne placki drożdżowe smażone na oleju to: ",
+      "odp":[
+         "knedle ",
+         "naleśniki ",
+         "racuch",
+         "podpłomyki "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Janusz Kofta śpiewał, aby pamiętali: ",
+      "odp":[
+         "o pomnikach ",
+         "o kwiatach ",
+         "o najbliższych ",
+         "o ogrodach"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Jak inaczej określa się osobę chorą na cukrzycę ? ",
+      "odp":[
+         "diabetyk",
+         "dyslektyk ",
+         "homeopata ",
+         "dietetyk "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Który z wymienionych metali wykorzystywany jest w termometrach ? ",
+      "odp":[
+         "rubid ",
+         "rod ",
+         "rtęć",
+         "ruten "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Statek wodny, na którego pokładzie mogą startować i lądować samoloty to: ",
+      "odp":[
+         "tankowiec ",
+         "krążownik ",
+         "niszczyciel ",
+         "lotniskowiec"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Czworokąt, którego wszystkie boki są równe oraz wszystkie kąty proste to: ",
+      "odp":[
+         "prostokąt ",
+         "kwadrat",
+         "romb ",
+         "trapez "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Czego nie oznacza nazwa „koziorożec” ? ",
+      "odp":[
+         "znaku zodiaku ",
+         "zwrotnika ",
+         "sera z koziego mleka",
+         "kozła skalnego "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Gorące źródło wyrzucające w regularnych odstępach czasu wodę i parę wodną to: ",
+      "odp":[
+         "wulkan ",
+         "gejzer",
+         "bojler ",
+         "źródło artezyjskie "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Uszy którego ze zwierząt w gwarze myśliwskiej nazywane są „słuchami” ? ",
+      "odp":[
+         "tarpana ",
+         "żaby ",
+         "sarny ",
+         "zająca"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Piaszczyste wzniesienie usypane przez wiatr to: ",
+      "odp":[
+         "piarg ",
+         "firn ",
+         "wydma",
+         "kopiec "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"W jakim mieście znajduje się słynny 102-piętrowy wieżowiec Empire State Building ? ",
+      "odp":[
+         "w Londynie ",
+         "w Nowym Jorku",
+         "w Sydney ",
+         "w Ottawie "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Ptak wykorzystywany przez wojsko od starożytności do II wojny światowej do przenoszenia wiadomości to: ",
+      "odp":[
+         "bocian ",
+         "jastrząb ",
+         "gołąb",
+         "dzika gęś "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"W jakich jednostkach mierzymy natężenie dźwięku ? ",
+      "odp":[
+         "w decybelach",
+         "w lumenach ",
+         "w kelwinach ",
+         "w amperach "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Depresja to obszar położony: ",
+      "odp":[
+         "1000 m n.p.m. ",
+         "500 m n.p.m. ",
+         "na poziomie morza ",
+         "poniżej poziomu morza"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Haftka to rodzaj: ",
+      "odp":[
+         "ściegu ",
+         "agrafki ",
+         "suwaka ",
+         "zapinki"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Miękka czapka wojskowa bez daszka, podłużnie składana to: ",
+      "odp":[
+         "rogatywka ",
+         "panama ",
+         "maciejówka ",
+         "furażerka"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Nad jaką zatoką leży Półwysep Westerplatte ? ",
+      "odp":[
+         "Zatoką Gdańską",
+         "Zatoką Meklemburską ",
+         "Zatoką Pomorską ",
+         "Zatoką Ryską "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Ostatni przypadek w deklinacji polskiej to: ",
+      "odp":[
+         "wołacz",
+         "narzędnik ",
+         "miejscownik ",
+         "biernik "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Z jakiego tworzywa robiono okaryny ? ",
+      "odp":[
+         "ze stali ",
+         "z miedzi ",
+         "z gliny",
+         "z bakelitu "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Postać z włoskiej „commedia dell’ arte”, sprytna pokojówka, ukochana Arlekina to: ",
+      "odp":[
+         "Pulcinella ",
+         "Brighella ",
+         "Scaramuccia ",
+         "Kolombina"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Na co „za komuny” nie było kartek ? ",
+      "odp":[
+         "na „Trybunę Ludu",
+         "na mięso ",
+         "na cukier ",
+         "na buty "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Jak nazywa się najwyższa skocznia narciarska ? ",
+      "odp":[
+         "żyrafia ",
+         "słoniowa ",
+         "mamucia",
+         "żurawia "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Ile wysokości ma stożek ? ",
+      "odp":[
+         "'jedną' ",
+         "dwie ",
+         "trzy ",
+         "cztery "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Litera „Ą” jest: ",
+      "odp":[
+         "samogłoską ustną ",
+         "samogłoską nosowa",
+         "spółgłoską dźwięczną ",
+         "spółgłoską bezdźwięczną "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Kto przez 5 lat mieszkał w wozie cyrkowym we wsi Podgradowice ? ",
+      "odp":[
+         "Jan Kiliński ",
+         "Andrzej Lepper ",
+         "Michał Drzymała",
+         "Jan Kierdziołek "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Woltyżerka to ćwiczenia akrobatyczne na koniu, biegnącym po obwodzie: ",
+      "odp":[
+         "kwadratu ",
+         "prostokąta ",
+         "trójkąta ",
+         "koła"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Który z zespołów wylansował piosenkę pt. „Bal wszystkich świętych” ? ",
+      "odp":[
+         "Myslovitz ",
+         "T. Love ",
+         "Budka Suflera",
+         "Piersi "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Który z wymienionych dokumentów dotyczy samochodu ? ",
+      "odp":[
+         "dowód tożsamości ",
+         "REGON ",
+         "resurs ",
+         "dowód rejestracyjny"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"O kimś bez czupryny mówimy: ",
+      "odp":[
+         "łysy jak pośladek ",
+         "łysy jak pięta ",
+         "łysy jak kolano",
+         "łysy jak łokieć "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Ile było krasnoludków w bajce o Królewnie Śnieżce ? ",
+      "odp":[
+         "siedmiu",
+         "ośmiu ",
+         "dziewięciu ",
+         "dziesięciu "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Którą z potraw jadamy na ciepło ? ",
+      "odp":[
+         "auszpik ",
+         "melbę ",
+         "gulasz",
+         "sorbet "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Która z wymienionych liter jest czwartą literą w alfabecie greckim ? ",
+      "odp":[
+         "delta",
+         "lambda ",
+         "sigma ",
+         "omega "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Gody ryb to: ",
+      "odp":[
+         "toki ",
+         "ruja ",
+         "tarło",
+         "ciągi "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Co nie odmierza czasu ? ",
+      "odp":[
+         "gnomon ",
+         "klepsydra ",
+         "zegar ",
+         "kampanila"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Który z podanych wyrazów nie określa figury w akrobacjach lotniczych ? ",
+      "odp":[
+         "pętla ",
+         "korkociąg ",
+         "otwieracz",
+         "beczka "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Ile trwa adwent – w chrześcijaństwie: okres przygotowań do Bożego Narodzenia ? ",
+      "odp":[
+         "2 tygodnie ",
+         "3 tygodnie ",
+         "4 tygodnie",
+         "pół roku "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Rodło – znak rodowy Polaków w Niemczech w stylizowanej formie odtwarza: ",
+      "odp":[
+         "bieg Odry ",
+         "bieg Wisły",
+         "bieg Łaby ",
+         "bieg Renu "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"W którym kraju zachęca się rodziny do posiadania tylko jednego potomka ? ",
+      "odp":[
+         "w Rosji ",
+         "w Szwecji ",
+         "we Francji ",
+         "w Chinach"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"W biegu z przeszkodami zawodnicy skaczą przez: ",
+      "odp":[
+         "kozła ",
+         "mur ",
+         "żywopłot ",
+         "płotki"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Przesądni odpukują w: ",
+      "odp":[
+         "szklaną kulę ",
+         "czoło czarnego kota ",
+         "talię kart ",
+         "niemalowane drewno"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Półprosta wychodząca z wierzchołka kąta płaskiego i dzieląca go na dwie równe części to: ",
+      "odp":[
+         "dwusieczna",
+         "średnica ",
+         "krzywa ",
+         "cięciwa "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Który z wymienionych ptaków nie jest gatunkiem sowy ? ",
+      "odp":[
+         "puchacz ",
+         "puszczyk ",
+         "świstun",
+         "pójdźka "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"W gwarze góralskiej człowiek z nizin to: ",
+      "odp":[
+         "cep ",
+         "kociuba ",
+         "ceper",
+         "cyntuś "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Biathlonista ma na nogach: ",
+      "odp":[
+         "narty biegowe",
+         "snowboard ",
+         "narty zjazdowe ",
+         "narty skokowe "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Potrawa z drobnych klusek gotowanych na mleku lub wodzie to: ",
+      "odp":[
+         "zalewajka ",
+         "zacierka",
+         "zasmażka ",
+         "mamałyga "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Ogary są psami: ",
+      "odp":[
+         "pasterskimi ",
+         "obronnymi ",
+         "gończymi",
+         "pociągowymi "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Jaki okrzyk wydawał kucharz Bartolini Bartłomiej, bohater dobranocki pt. „Porwanie Baltazara Gąbki” ? ",
+      "odp":[
+         "„Mamma Mia!” ",
+         "„Carramba!” ",
+         "„Kruca fuks!” ",
+         "„Ach, jooo!” "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Sok z jakich owoców musi wypić osoba dekorowana Orderem Uśmiechu ? ",
+      "odp":[
+         "z czarnej porzeczki ",
+         "z cytryny",
+         "z gruszki ",
+         "z marchwi "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Jaki kształt mają piramidy w Egipcie ? ",
+      "odp":[
+         "walca ",
+         "graniastosłupa ",
+         "ostrosłupa",
+         "prostopadłościanu "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Krajem przodującym w hodowli tulipanów i ich cebul jest: ",
+      "odp":[
+         "Holandia",
+         "Belgia ",
+         "Francja ",
+         "Szwecja "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Który z kamieni nie należy do szlachetnych ? ",
+      "odp":[
+         "nefryt",
+         "szmaragd ",
+         "szafir ",
+         "rubin "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Określony odcinek wyścigu kolarskiego to: ",
+      "odp":[
+         "etap",
+         "gem ",
+         "tercja ",
+         "runda "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Mieszkańcem rafy koralowej nie jest: ",
+      "odp":[
+         "ośmiornica ",
+         "ciernik",
+         "rozgwiazda ",
+         "gąbka "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Kto był wokalistą zespołu Led Zeppelin ? ",
+      "odp":[
+         "Robert Plant",
+         "John Lennon ",
+         "Mick Jagger ",
+         "Eric Burdon "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Popularna gra planszowa z kostką i płytkami z umieszczonymi na nich literami to: ",
+      "odp":[
+         "Domino ",
+         "Lotto ",
+         "Scrabble",
+         "Monopol "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Co nie należy do ekwipunku płetwonurka ? ",
+      "odp":[
+         "maska ",
+         "raki",
+         "butla z tlenem ",
+         "płetwy "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"W piłce nożnej pierwsza żółta kartka pokazana przez sędziego głównego oznacza: ",
+      "odp":[
+         "wykluczenie z gry ",
+         "ostrzeżenie",
+         "spalony ",
+         "zmianę zawodnika "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Afrykański instrument muzyczny umożliwiający przekazywanie sygnałów na odległość to: ",
+      "odp":[
+         "tam-tam",
+         "drumla ",
+         "gong ",
+         "ksylofon "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Posąg Nike z Samotraki posiada: ",
+      "odp":[
+         "głowę ",
+         "ręce ",
+         "miecz ",
+         "skrzydła"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Jaka postać nie została stworzona przez Walta Disneya ? ",
+      "odp":[
+         "Pszczółka Maja",
+         "Goofy ",
+         "Pluto ",
+         "Kaczor Donald "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Znaki drogowe w kształcie trójkąta, żółte z czerwonym obrzeżem to znaki: ",
+      "odp":[
+         "zakazu ",
+         "nakazu ",
+         "ostrzegawcze",
+         "informacyjne "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Na stadionie, a nie nad wodą, odbywają się zawody wędkarstwa: ",
+      "odp":[
+         "springowego ",
+         "spławikowego ",
+         "podlodowego ",
+         "rzutowego"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Zgodnie z przesądem, małżeństwo będzie udane, jeśli panna młoda do ślubu założy: ",
+      "odp":[
+         "coś niemodnego ",
+         "coś pożyczonego",
+         "coś podartego ",
+         "coś czarnego "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Który z polskich polityków nie był premierem ? ",
+      "odp":[
+         "Tadeusz Mazowiecki ",
+         "Waldemar Pawlak ",
+         "Zofia Kuratowska",
+         "Jan Krzysztof Bielecki "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Która z wymienionych liczb jest podzielna przez 4 ? ",
+      "odp":[
+         "26 ",
+         "36",
+         "42 ",
+         "66 "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Jaka kopalnia znajduje się w Wieliczce ? ",
+      "odp":[
+         "kopalnia soli",
+         "kopalnia diamentów ",
+         "kopalnia miedzi ",
+         "kopania węgla kamiennego "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Który z motyli jest motylem nocnym ? ",
+      "odp":[
+         "paź królowej ",
+         "cytrynek ",
+         "pawik grabówka",
+         "bielinek kapustnik "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Kto był wokalistą zespołu The Doors ? ",
+      "odp":[
+         "Jim Morrison",
+         "Jimi Hendrix ",
+         "Eric Clapton ",
+         "Elvis Presley "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Jakiej narodowości jest Nadia Comaneci, 5-krotna mistrzyni olimpijska ? ",
+      "odp":[
+         "bułgarskiej ",
+         "węgierskiej ",
+         "rumuńskiej",
+         "czeskiej"
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Kanał Sueski stanowi umowną granicę między: ",
+      "odp":[
+         "Amerykami ",
+         "Afryką i Azją",
+         "Australią i Azją ",
+         "Kanadą i Grenlandią "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Jak w krawiectwie nazywa się rodzaj zapięcia działającego na zasadzie wtyczki i gniazda ? ",
+      "odp":[
+         "'zatrzask' ",
+         "rzep ",
+         "suwak ",
+         "haftka "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"W którym filmie Romana Polańskiego, Mia Farrow spodziewa się dziecka diabła ? ",
+      "odp":[
+         "„Lokator” ",
+         "„Wstręt” ",
+         "„Matnia” ",
+         "„Dziecko Rosemary”"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Kim według mitów greckich byli cyklopi ? ",
+      "odp":[
+         "żeglarzami ",
+         "władcami mórz ",
+         "jednookimi olbrzymami",
+         "bogami "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Kto stoi na czele korpusu dyplomatycznego akredytowanego w danym państwie ? ",
+      "odp":[
+         "dziekan",
+         "dyrektor ",
+         "rektor ",
+         "minister "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Konik morski to: ",
+      "odp":[
+         "szkarłupień ",
+         "ryba",
+         "mięczak ",
+         "głowonóg "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Sprawy codzienne, przyziemne to: ",
+      "odp":[
+         "chleb kamienny ",
+         "chleb świętojański ",
+         "chleb żałobny ",
+         "chleb powszedni"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Gdzie w 1963 roku zastrzelono J. F. Kennedy’ego ? ",
+      "odp":[
+         "w Los Angeles ",
+         "w Dallas",
+         "w Atlancie ",
+         "w Phoenix "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"W jaki sposób do lata zmierzała wokalistka zespołu Bajm – Beata Kozidrak ? ",
+      "odp":[
+         "piechotą",
+         "kajakiem ",
+         "autostopem ",
+         "hulajnogą "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Ilu było jeźdźców Apokalipsy ? ",
+      "odp":[
+         "dwóch ",
+         "trzech ",
+         "czterech",
+         "pięciu "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Która z podanych miar nie jest stosowana na morzu ? ",
+      "odp":[
+         "piędź",
+         "węzeł ",
+         "rumb ",
+         "kabel "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Jaki numer nosił Rudy – czołg „Czterej pancernych” ? ",
+      "odp":[
+         "101 ",
+         "102",
+         "202 ",
+         "303 "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Starożytni Rzymianie, mówiąc „mare nostrum” (nasze morze), mieli na myśli: ",
+      "odp":[
+         "Morze Kaspijskie ",
+         "Morze Czarne ",
+         "Morze Czerwone ",
+         "Morze Śródziemne"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Którą z wymienionych książek dla dzieci napisał Jan Brzechwa ? ",
+      "odp":[
+         "Król Maciuś I ",
+         "Akademia Pana Kleksa",
+         "Biały Kieł ",
+         "Dzieci z Bullerbyn "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Ile kadłubów ma katamaran ? ",
+      "odp":[
+         "jeden ",
+         "dw",
+         "trzy ",
+         "cztery "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 1
+   },
+   {
+      "tresc":"Jaki płacz oznaczają „krokodyle łzy” ? ",
+      "odp":[
+         "szczery ",
+         "dyskretny ",
+         "histeryczny ",
+         "nieszczery"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Ku czci jakiej bogini wzniesiono Partenon na Akropolu ateńskim ? ",
+      "odp":[
+         "Ateny",
+         "Artemidy ",
+         "Demeter ",
+         "Hery "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Nauczyciel języka obcego na wyższej uczelni to: ",
+      "odp":[
+         "adiunkt ",
+         "lektor",
+         "dziekan ",
+         "docent "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Wirtuozem gry na jakim instrumencie był Niccolo Paganini ? ",
+      "odp":[
+         "na waltorni ",
+         "na skrzypcach",
+         "na fortepianie ",
+         "na harfie "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Legendarny stwór o ciele uskrzydlonego lwa, głowie i szponach orła to: ",
+      "odp":[
+         "Gryf",
+         "Sfinks ",
+         "Centaur ",
+         "Minotaur "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Jak nazywa się znak w notacji muzycznej obniżający dźwięk o pół tonu ? ",
+      "odp":[
+         "synkopa ",
+         "krzyżyk ",
+         "bemol",
+         "fermata "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Piana z białek rozbita z cukrem i zapieczona w słodkie, białe ciastko to: ",
+      "odp":[
+         "makagigi ",
+         "strudel ",
+         "ptyś ",
+         "beza"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Bez której z wymienionych przypraw nie może się obejść grzane wino ? ",
+      "odp":[
+         "bez chili ",
+         "bez cynamonu",
+         "bez piołunu ",
+         "bez curry "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Wianek panny młodej ozdobiony był dawniej: ",
+      "odp":[
+         "anyżkiem ",
+         "rutą",
+         "miętą ",
+         "macierzanką "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Które z podanych spodni są najdłuższe ? ",
+      "odp":[
+         "dzwony",
+         "szorty ",
+         "pludry ",
+         "bermudy "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Które z podanych miast leży nad Dunajem ? ",
+      "odp":[
+         "Nowy Targ ",
+         "Nowy Sad",
+         "Nowy Sącz ",
+         "Nowy Staw "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Szkarlatyna to inaczej: ",
+      "odp":[
+         "koklusz ",
+         "grypa ",
+         "płonica",
+         "malaria "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Czego nie produkują pszczoły ? ",
+      "odp":[
+         "mleczka ",
+         "kitu ",
+         "wosku ",
+         "nektaru"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Kto porwał Piękną Helenę w utworze Homera pt. „Iliada” ? ",
+      "odp":[
+         "Agamemnon ",
+         "Achilles ",
+         "Parys",
+         "Hektor "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Kim był Louis Armstrong ? ",
+      "odp":[
+         "trębaczem jazzowym",
+         "astronautą ",
+         "pisarzem ",
+         "konstruktorem "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Jakie zwierzęta wyposażone są w kądziołki ? ",
+      "odp":[
+         "nietoperze ",
+         "kameleony ",
+         "modliszki ",
+         "pająki"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Co nie jest ogrodzeniem ? ",
+      "odp":[
+         "ostrokół ",
+         "palisada ",
+         "zarzuela",
+         "zeriba "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Jakiego rodzaju artylerii użyli prawdopodobnie Krzyżacy w bitwie pod Grunwaldem ? ",
+      "odp":[
+         "haubic ",
+         "bombard",
+         "zenitówek ",
+         "pancerzownic "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Od końca XIX wieku kwintal liczył: ",
+      "odp":[
+         "10 kg ",
+         "100 kg",
+         "150 kg ",
+         "200 kg "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Co przypomina odgłos wydawany przez hienę ? ",
+      "odp":[
+         "mlaskanie ",
+         "chichot",
+         "mruczenie ",
+         "sapanie "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 2
+   },
+   {
+      "tresc":"Powiedzenie „dziesiąta woda po kisielu” oznacza: ",
+      "odp":[
+         "mdły smak ",
+         "coś bardzo rzadkiego ",
+         "odległe pokrewieństwo",
+         "coś niesmacznego "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 4
+   },
+   {
+      "tresc":"Ile „ramion” ma ośmiornica ? ",
+      "odp":[
+         "trzy ",
+         "pięć ",
+         "osiem",
+         "dwanaście "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"W jakiej dyscyplinie sportowej Artur Partyka zdobył tytuł mistrza Europy w 1998 roku ? ",
+      "odp":[
+         "w skoku w wzwyż",
+         "w pchnięciu kulą ",
+         "w żeglarstwie ",
+         "w judo "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Z jakim ssakiem spokrewniony jest bizon ? ",
+      "odp":[
+         "z jeleniem ",
+         "z łosiem ",
+         "z sarną ",
+         "z żubrem"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Jakiego koloru jest łódź podwodna w piosence zespołu The Beatles ? ",
+      "odp":[
+         "białego ",
+         "czarnego ",
+         "żółtego",
+         "niebieskiego "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"W jakim mieście znajduje się Ściana Płaczu ? ",
+      "odp":[
+         "w Rzymie ",
+         "w Pekinie ",
+         "w Bombaju ",
+         "w Jerozolimie"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Jakie lotnictwo zaatakowało Pearl Harbor 7 grudnia 1941 roku ? ",
+      "odp":[
+         "radzieckie ",
+         "włoskie ",
+         "japońskie",
+         "niemieckie "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"W jakim kraju wynaleziono klocki Lego ? ",
+      "odp":[
+         "w USA ",
+         "w Danii",
+         "w Niemczech ",
+         "na Węgrzech "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"W jakim budynku gospodarczym Augiasz miał największy bałagan ? ",
+      "odp":[
+         "w kurniku ",
+         "w chlewni ",
+         "w stodole ",
+         "w stajni"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Bohaterem jakiej sztuki Bertolta Brechta jest Mackie Majcher ? ",
+      "odp":[
+         "„Matka Courage” ",
+         "„Kariera Artura Uli” ",
+         "„Życie Galileusza” ",
+         "„Opera za 3 grosze”"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Jakiego zawodu uczy się bohaterka grana przez Jodie Foster w filmie pt. „Milczenie owiec” ? ",
+      "odp":[
+         "agentki FBI",
+         "modelki ",
+         "barmanki ",
+         "adwokata "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 7
+   },
+   {
+      "tresc":"Latimeria to: ",
+      "odp":[
+         "ryba trzonopłetwa",
+         "taniec ",
+         "hiszpańska potrawa ",
+         "kobiece imię "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"W dramacie Wyspiańskiego na wesele Chochoła zaprasza: ",
+      "odp":[
+         "Dziennikarz ",
+         "Czepiec ",
+         "Gospodarz ",
+         "Rachela"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 5
+   },
+   {
+      "tresc":"Organizacja światowa zrzeszająca narodowe związki piłkarskie to: ",
+      "odp":[
+         "NBA ",
+         "WBO ",
+         "WBC ",
+         "FIFA"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Cichociemni działali w okresie: ",
+      "odp":[
+         "powstania styczniowego ",
+         "potopu szwedzkiego ",
+         "II wojny światowej",
+         "zimnej wojny "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Najbardziej „zakręcona” polska wokalistka to: ",
+      "odp":[
+         "Reni Jusis",
+         "Maryla Rodowicz ",
+         "Katarzyna Skrzynecka ",
+         "Agnieszka Chylińska "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"Przeciwieństwem ascety jest: ",
+      "odp":[
+         "pokutnik ",
+         "sybaryta",
+         "biczownik ",
+         "męczennik "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Tak zwana dziura ozonowa to spadek zawartości ozonu: ",
+      "odp":[
+         "w oceanach ",
+         "w litosferze ",
+         "w atmosferze",
+         "w przestrzeni kosmicznej "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"Który z podanych terminów nie określa części mózgu ? ",
+      "odp":[
+         "błona podstawna",
+         "szyszynka ",
+         "wzgórze ",
+         "przysadka "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"W piłce ręcznej zawodnicy, poza bramkarzem, nie mogą dotykać piłki: ",
+      "odp":[
+         "odbitej przez przeciwnika ",
+         "głową ",
+         "tułowiem ",
+         "nogą poniżej kolana"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 6
+   },
+   {
+      "tresc":"W wojskach lądowych jedna gwiazdka na pagonie oznacza: ",
+      "odp":[
+         "kaprala ",
+         "chorążego",
+         "sierżanta ",
+         "plutonowego "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Ile naturalnych satelitów ma Ziemia ? ",
+      "odp":[
+         "jednego",
+         "dwóch ",
+         "trzech ",
+         "czterech "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 3
+   },
+   {
+      "tresc":"„Nie rzucim ziemi, skąd nasz ród...” – tak zaczyna się: ",
+      "odp":[
+         "„Warszawianka” ",
+         "„Boże, cos Polskę” ",
+         "„Pierwsza Brygada” ",
+         "”Rota”"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Jakiego koloru nie ma na fladze Belgii ? ",
+      "odp":[
+         "żółtego ",
+         "niebieskiego",
+         "czarnego ",
+         "czerwonego "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 11
+   },
+   {
+      "tresc":"Urządzenie na pokładzie samolotu, pomagające ustalić przyczyny ewentualnej katastrofy to: ",
+      "odp":[
+         "trymer ",
+         "blue box ",
+         "czarna skrzynka",
+         "wolant "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Symbolem „hi-fi” oznaczamy: ",
+      "odp":[
+         "jakość obrazu ",
+         "jakość dźwięku",
+         "estetykę produktu ",
+         "wysoką cenę "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Wyborcy popierający określoną partię lub kandydata to: ",
+      "odp":[
+         "elektorat",
+         "publiczność ",
+         "audytorium ",
+         "respondenci "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Tytułowy bohater komedii pt. „Miś” jest prezesem klubu: ",
+      "odp":[
+         "„Wisła” ",
+         "„Słoneczko” ",
+         "„Tęcza”",
+         "„Warszawianka” "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Okresowy sprawdzian wiadomości studenta, najczęściej pisemny to: ",
+      "odp":[
+         "referat ",
+         "wypracowanie ",
+         "rozprawka ",
+         "kolokwium"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Jak nazywa się zakonnik pilnujący drzwi w bramie klasztornej ? ",
+      "odp":[
+         "eremita ",
+         "oblat ",
+         "furtian",
+         "cenobita "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Reżyserem tanecznych układów widowisk scenicznych, szczególnie baletowych jest: ",
+      "odp":[
+         "choreograf",
+         "scenograf ",
+         "inscenizator ",
+         "inspicjent "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 8
+   },
+   {
+      "tresc":"Co nie służy do kierowania wierzchowcem ? ",
+      "odp":[
+         "cugle ",
+         "lejce ",
+         "wodze ",
+         "popręg"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Symbol chemiczny magnezu to: ",
+      "odp":[
+         "Mn ",
+         "Mg",
+         "Mo ",
+         "Md "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 0
+   },
+   {
+      "tresc":"Ryszard Riedel śpiewał w zespole: ",
+      "odp":[
+         "Budka Suflera ",
+         "Elektryczne Gitary ",
+         "Dżem",
+         "Kombi "
+      ],
+      "odp_poprawna":"C",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Który ze znanych dziennikarzy grał postać Dudusia w serialu pt. „Podróż za jeden uśmiech” ? ",
+      "odp":[
+         "Tomasz Lis ",
+         "Wojciech Jagielski ",
+         "Maciej Orłoś ",
+         "Filip Łobodziński"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Gdzie w organizmie ludzkim znajduje się plamka ślepa ? ",
+      "odp":[
+         "w oku",
+         "w mózgu ",
+         "w sercu ",
+         "w wątrobie "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Które z owadów nie są pod ochroną w Polsce ? ",
+      "odp":[
+         "jelonki rogacze ",
+         "modliszki zwyczajne ",
+         "biegacze ",
+         "bielinki kapustniki"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Bohaterem jakiej powieści jest Cezary Baryka ? ",
+      "odp":[
+         "„Wierna rzeka” ",
+         "„Popioły” ",
+         "„Dzieje grzechu” ",
+         "„Przedwiośnia”"
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Norka jakiego zwierzęcia była bramą krainy czarów, do której trafiła Alicja ? ",
+      "odp":[
+         "królika",
+         "borsuka ",
+         "nornicy ",
+         "lisa "
+      ],
+      "odp_poprawna":"A",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Wywrócenie się samochodu lub samolotu do góry kołami to: ",
+      "odp":[
+         "kabotaż ",
+         "abordaż ",
+         "sabotaż ",
+         "kapotaż "
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 9
+   },
+   {
+      "tresc":"Przedstawiciel dyplomatyczny Watykanu w randze ambasadora to: ",
+      "odp":[
+         "kardynał ",
+         "nuncjusz",
+         "regent ",
+         "arcybiskup "
+      ],
+      "odp_poprawna":"B",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Która z pań nie była premierem ? ",
+      "odp":[
+         "Indira Gandhi ",
+         "Golda Meir ",
+         "Margaret Thatcher ",
+         "Zofia Kuratowska "
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 10
+   },
+   {
+      "tresc":"Niemiecka moneta zdawkowa to: ",
+      "odp":[
+         "grosch ",
+         "stotinka ",
+         "cent ",
+         "pfennig "
+      ],
+      "odp_poprawna":"D",
+     "trudnosc": 9
+     }
+]
