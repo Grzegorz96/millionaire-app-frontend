@@ -38,5 +38,3 @@ else:
 finally:
     connection.close()
     cur.close()
-
-
