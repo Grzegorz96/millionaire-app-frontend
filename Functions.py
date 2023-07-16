@@ -5,7 +5,7 @@ from pygame import mixer
 from tkinter import messagebox
 from Backend_requests import registration_user_request, send_activation_number_request, \
     get_questions_request, login_user_request, get_user_info_request, check_for_registration_request, \
-    get_best_scores_request
+    get_best_scores_request, send_score_request, update_user_request, delete_user_request, add_questions_request
 from requests import codes
 from sys import exit
 from User_class import User
@@ -84,21 +84,20 @@ def check_activation_number(activation_number, activation_entry, first_name, las
                                 "Rejestracja oraz aktywacja użytkownika przebiegła pomyślnie,"
                                 " możesz zalogować sie na swoje konto.")
 
-        elif response_for_registration_user.status_code == codes.not_found:
-            activation_window.destroy()
-            messagebox.showerror("Nie udało się utworzyć konta.",
-                                 "Utworzenie konta nie powiodła się, spróbuj później.")
+        elif response_for_registration_user.status_code == codes.bad_request:
+            if "login_error" in response_for_registration_user.json():
+                activation_window.destroy()
+                messagebox.showerror("Nie udało sie utworzyć konta.",
+                                     "Użytkownik o podanym loginie jest już zarejestrowany.")
 
-        elif "login_error" in response_for_registration_user.json():
-            activation_window.destroy()
-            messagebox.showerror("Nie udało sie utworzyć konta.",
-                                 "Użytkownik o podanym loginie jest już zarejestrowany.")
-
-        elif "email_error" in response_for_registration_user.json():
-            activation_window.destroy()
-            messagebox.showerror("Nie udało sie utworzyć konta.",
-                                 "Użytkownik o podanym adresie e-mail jest już zarejestrowany.")
-
+            elif "email_error" in response_for_registration_user.json():
+                activation_window.destroy()
+                messagebox.showerror("Nie udało sie utworzyć konta.",
+                                     "Użytkownik o podanym adresie e-mail jest już zarejestrowany.")
+            else:
+                activation_window.destroy()
+                messagebox.showerror("Nie udało się utworzyć konta.",
+                                     "Utworzenie konta nie powiodła się, spróbuj później.")
         else:
             activation_window.destroy()
             messagebox.showerror("Nie udało się utworzyć konta.",
@@ -106,7 +105,7 @@ def check_activation_number(activation_number, activation_entry, first_name, las
 
     else:
         messagebox.showerror("Błędy numer aktywacyjny.",
-                             "Wpisany numer aktywacyjny nie pasuje do numeru wysłanego na adres e-mail.")
+                             f"Wpisany numer aktywacyjny nie pasuje do numeru wysłanego na adres {email}.")
 
 
 def validation_for_login(login_entry, password_entry, login_window, init_start_label, root):
@@ -290,11 +289,180 @@ def run_theme(theme1, theme2=False):
             loops=-1)
 
 
-def download_best_scores(init_best_scores_window):
-    response_for_download_best_scores = get_best_scores_request()
+def download_best_scores(init_best_scores_window=None, limit=None):
+    response_for_download_best_scores = get_best_scores_request(limit)
     if response_for_download_best_scores.status_code == codes.ok:
         best_scores = response_for_download_best_scores.json()["result"]
-        init_best_scores_window(best_scores)
+        if limit:
+            return best_scores
+        else:
+            init_best_scores_window(best_scores)
     else:
         messagebox.showerror("Błąd podczas pobierania najlepszych wyników.",
                              "Nie udało się pobrać najlepszych wyników, spróbuj ponownie później.")
+
+
+def send_score(points):
+    response_for_sending_score = send_score_request(points)
+    if response_for_sending_score.status_code == codes.created:
+        if "access-token" in response_for_sending_score.headers:
+            Config.logged_in_user_info.access_token = response_for_sending_score.headers["access-token"]
+            send_score(points)
+        else:
+            messagebox.showinfo("Gratulacje!", f"{Config.logged_in_user_info.first_name}, "
+                                               f"Twój wynik trafił do listy najlepszych graczy!")
+
+    elif response_for_sending_score.status_code == codes.unauthorized:
+        if "Your session has expired" in response_for_sending_score.json():
+            messagebox.showerror("Błąd podczas zapisywania wyniku.",
+                                 "Nie mogliśmy zapisać Twojego wyniku z powodu wygaśnięcia sesji."
+                                 " Zaloguj się ponownie.")
+        else:
+            messagebox.showerror("Błąd podczas zapisywania wyniku.",
+                                 "Z powodu problemu z tokenem dostępu lub problemu z odświeżeniem tokenu dostępu"
+                                 " nie mogliśmy zapisać Twojego wyniku.")
+    else:
+        messagebox.showerror("Błąd podczas zapisywania wyniku.",
+                             "W chwili obecnej nie możemy zapisać Twojego wyniku, gdyż wystąpił błąd.")
+
+
+def update_user_data(label, entry, attribute):
+    new_value = entry.get()
+    request_body = None
+    if attribute == "Imie:":
+        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń]{2,45}$", new_value):
+            request_body = {"first_name": new_value}
+        else:
+            messagebox.showerror("Niepoprawne imię.", "Wprowadzono niepoprawne dane do zmiany imienia.")
+
+    elif attribute == "Nazwisko:":
+        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń]{2,45}$", new_value):
+            request_body = {"last_name": new_value}
+        else:
+            messagebox.showerror("Niepoprawne nazwisko.", "Wprowadzono niepoprawne dane do zmiany nazwiska.")
+    else:
+        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*]{7,45}$", new_value):
+            request_body = {"password": new_value}
+        else:
+            messagebox.showerror("Niepoprawne hasło.", "Wprowadzono niepoprawne dane do zmiany hasła.")
+
+    if request_body:
+        response_for_updating_user = update_user_request(request_body)
+        if response_for_updating_user.status_code == codes.ok:
+            if "first_name" in request_body:
+                Config.logged_in_user_info.first_name = new_value
+            elif "last_name" in request_body:
+                Config.logged_in_user_info.last_name = new_value
+            else:
+                Config.logged_in_user_info.password = new_value
+
+            label["text"] = f"{attribute} {new_value}"
+            messagebox.showinfo("Pomyślnie zaktualizowano użytkownika.", "Twój profil został pomyślnie zaktualizowany.")
+        elif response_for_updating_user.status_code == codes.created:
+            Config.logged_in_user_info.access_token = response_for_updating_user.headers["access-token"]
+            update_user_data(label, entry, attribute)
+        elif response_for_updating_user.status_code == codes.conflict:
+            messagebox.showerror("Nie udało sie zaktualizować użytkownika.",
+                                 "Dane, które wpisujesz już istnieją, zmień dane.")
+        elif response_for_updating_user.status_code == codes.unauthorized:
+            if "Your session has expired" in response_for_updating_user.json():
+                messagebox.showerror("Nie udało sie zaktualizować użytkownika.",
+                                     "Nie mogliśmy zaktualizować użytkownika z powodu wygaśnięcia sesji."
+                                     " Zaloguj się ponownie.")
+            else:
+                messagebox.showerror("Nie udało sie zaktualizować użytkownika.",
+                                     "Z powodu problemu z tokenem dostępu lub problemu z odświeżeniem tokenu dostępu"
+                                     " nie mogliśy zaktualizować użytkownika.")
+        else:
+            messagebox.showerror("Nie udało sie zaktualizować użytkownika.",
+                                 "W chwili obecnej nie możemy zaktualizować użykownika, gdyż wystąpił błąd.")
+
+
+def delete_user(init_authentication_label, root):
+    response_for_deleting_user = delete_user_request()
+    if response_for_deleting_user.status_code == codes.ok:
+        messagebox.showinfo("Pomyślnie usunięto konto.", "Twóje konto zostało pomyślnie usunięte.")
+        logout_user(init_authentication_label, root)
+    elif response_for_deleting_user.status_code == codes.created:
+        Config.logged_in_user_info.access_token = response_for_deleting_user.headers["access-token"]
+        delete_user(init_authentication_label, root)
+    elif response_for_deleting_user.status_code == codes.unauthorized:
+        if "Your session has expired" in response_for_deleting_user.json():
+            messagebox.showerror("Nie udało sie usunąć konta.",
+                                 "Nie mogliśmy usunąć konta z powodu wygaśnięcia sesji. Zaloguj się ponownie.")
+        else:
+            messagebox.showerror("Nie udało sie usunąć konta.",
+                                 "Z powodu problemu z tokenem dostępu lub problemu z odświeżeniem tokenu dostępu"
+                                 " nie mogliśmy usunąć konta.")
+
+    else:
+        messagebox.showerror("Nie udało sie usunąć konta.",
+                             "W chwili obecnej nie możemy usunąć konta, gdyż wystąpił błąd.")
+
+
+def add_questions(list_of_entries):
+    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{5,120}$", list_of_entries[0].get()):
+        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[1].get()):
+            if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[2].get()):
+                if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[3].get()):
+                    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[4].get()):
+                        if match("^[ABCD]$", list_of_entries[5].get()):
+                            if match("^(0|1|2|3|4|5|6|7|8|9|10|11)$", list_of_entries[6].get()):
+                                request_body = {
+                                      "tresc": list_of_entries[0].get(),
+                                      "odp": [
+                                         list_of_entries[1].get(),
+                                         list_of_entries[2].get(),
+                                         list_of_entries[3].get(),
+                                         list_of_entries[4].get()
+                                      ],
+                                      "odp_poprawna": list_of_entries[5].get(),
+                                      "trudnosc": int(list_of_entries[6].get())
+                                }
+                                response_for_adding_questions = add_questions_request(request_body)
+                                if response_for_adding_questions.status_code == codes.created:
+                                    if "access-token" in response_for_adding_questions.headers:
+                                        Config.logged_in_user_info.access_token = \
+                                            response_for_adding_questions.headers["access-token"]
+                                        add_questions(list_of_entries)
+
+                                    else:
+                                        messagebox.showinfo("Pomyślnie dodano pytanie",
+                                                            "Twoje pytanie zostało pomyślnie dodane, dziękujemy!")
+
+                                elif response_for_adding_questions.status_code == codes.unauthorized:
+                                    if "Your session has expired" in response_for_adding_questions.json():
+                                        messagebox.showerror("Nie udalo sie dodać pytania.",
+                                                             "Nie mogliśmy dodać pytania z powodu wygaśnięcia sesji."
+                                                             " Zaloguj się ponownie.")
+                                    else:
+                                        messagebox.showerror("Nie udało sie dodać pytania.",
+                                                             "Z powodu problemu z tokenem dostępu lub problemu z "
+                                                             "odświeżeniem tokenu dostępu nie mogliśmy dodać pytania.")
+                                else:
+                                    messagebox.showerror("Nie udało sie dodać pytania.",
+                                                         "W chwili obecnej nie możemy dodać pytania, "
+                                                         "gdyż wystąpił błąd.")
+                            else:
+                                messagebox.showerror("Błędne dane poziomu trudności pytania.",
+                                                     "Poziom trudności pytania powinien być określony od 0 do 11.")
+                        else:
+                            messagebox.showerror("Błędne dane prawidłowej odpowiedzi",
+                                                 "Prawidłowa odpowiedź powinna odpowiadać wielkiej literze:"
+                                                 " A, B, C lub D.")
+                    else:
+                        messagebox.showerror("Błędne dane odpowiedzi D.",
+                                             "Odpowiedzi powinny zawierać od 2 do 45 znaków.")
+                else:
+                    messagebox.showerror("Błędne dane odpowiedzi C.",
+                                         "Odpowiedzi powinny zawierać od 2 do 45 znaków.")
+            else:
+                messagebox.showerror("Błędne dane odpowiedzi B.",
+                                     "Odpowiedzi powinny zawierać od 2 do 45 znaków.")
+        else:
+            messagebox.showerror("Błędne dane odpowiedzi A.",
+                                 "Odpowiedzi powinny zawierać od 2 do 45 znaków.")
+    else:
+        messagebox.showerror("Błędne dane treści pytania.",
+                             "Treść pytania powinna zawierać od 5 do 120 znaków.")
+

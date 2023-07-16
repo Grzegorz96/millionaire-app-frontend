@@ -1,8 +1,9 @@
 from tkinter import *
-import datetime
+from datetime import datetime
 import Config
 from Functions import draw_question, run_theme, check_answer, fifty_fifty, validation_for_register, logout_user, \
-    check_activation_number, validation_for_login, download_best_scores
+    check_activation_number, validation_for_login, download_best_scores, send_score, update_user_data, delete_user, \
+    add_questions
 
 
 # Initialization main window of app.
@@ -36,8 +37,8 @@ def init_date(root):
 # Updating date
 def update_date(root, time_label):
     # assignment new date and time from now to variables.
-    date = f"{datetime.datetime.now().date()}"
-    time = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
+    date = f"{datetime.now().date()}"
+    time = f"{datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}"
     # Config time_label for new data.
     time_label.config(text=f"{date} {time}")
     # Recursion of function after 1s.
@@ -50,26 +51,26 @@ def init_authentication_label(root):
     if isinstance(Config.current_page, Label):
         Config.current_page.destroy()
 
-    Config.photo = PhotoImage(file="background_start.png")
-    login_label = Label(root, width=500, height=700, image=Config.photo)
-    login_label.pack()
+    Config.photo = PhotoImage(file="background.png")
+    authentication_label = Label(root, width=500, height=700, image=Config.photo)
+    authentication_label.pack()
     # Making labels and buttons.
-    Label(login_label, text="MILIONERZY",font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
-    Button(login_label, text="Zaloguj się", width=30, bg="#A9A9A9",
+    Label(authentication_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
+    Button(authentication_label, text="Zaloguj się", width=30, bg="#A9A9A9",
            command=lambda: init_login_window(root)).place(x=135, y=500)
-    Button(login_label, text="Nie masz konta? Zarejestruj sie", width=30, bg="#A9A9A9",
+    Button(authentication_label, text="Nie masz konta? Zarejestruj sie", width=30, bg="#A9A9A9",
            command=lambda: init_register_window()).place(x=135, y=530)
-    Button(login_label, text="Kontynuuj jako gość", width=30, bg="#A9A9A9",
+    Button(authentication_label, text="Kontynuuj jako gość", width=30, bg="#A9A9A9",
            command=lambda: init_start_label(root)).place(x=135, y=560)
     # assignment login_label into Config.current_page.
-    Config.current_page = login_label
+    Config.current_page = authentication_label
 
 
 # Initialization start label.
 def init_start_label(root):
     # destroying current_page and then assignment this into now label.
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="background_start.png")
+    Config.photo = PhotoImage(file="background.png")
     start_label = Label(root, width=500, height=700, image=Config.photo)
     start_label.pack()
     # Making label and buttons.
@@ -77,20 +78,94 @@ def init_start_label(root):
     Button(start_label, text="Nowa gra", width=30, bg="#A9A9A9",
            command=lambda: init_game_label(root)).place(x=135, y=500)
     Button(start_label, text="Najlepsze wyniki", width=30, bg="#A9A9A9",
-           command=lambda: download_best_scores(init_best_scores_window)).place(x=135, y=530)
+           command=lambda: download_best_scores(init_best_scores_window=init_best_scores_window)).place(x=135, y=530)
     if Config.is_user_logged_in:
         Button(start_label, text="Twoje konto", bg="#A9A9A9",
-               command=lambda: print("to twoje konto")).place(x=355, y=10)
+               command=lambda: init_user_label(root)).place(x=355, y=10)
         Button(start_label, text="Wyloguj", bg="#A9A9A9",
                command=lambda: logout_user(init_authentication_label, root)).place(x=435, y=10)
-        Button(start_label, text="Dodaj pytania", width=30, bg="#A9A9A9",
-               command=lambda: print("dodano pytania")).place(x=135, y=560)
+        Button(start_label, text="Dodaj pytanie", width=30, bg="#A9A9A9",
+               command=lambda: init_add_question_label(root)).place(x=135, y=560)
 
     else:
         Button(start_label, text="Cofnij", width=30, bg="#A9A9A9",
                command=lambda: init_authentication_label(root)).place(x=135, y=560)
 
     Config.current_page = start_label
+
+
+def init_user_label(root):
+    Config.current_page.destroy()
+    Config.photo = PhotoImage(file="background.png")
+    user_label = Label(root, width=500, height=700, image=Config.photo)
+    user_label.pack()
+    Label(user_label, text="Panel użytkownika", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
+    Button(user_label, text="Usuń konto", bg="#A9A9A9",
+           command=lambda: delete_user(init_authentication_label, root)).place(x=418, y=10)
+
+    list_of_user_info = [
+        ("Imie:", Config.logged_in_user_info.first_name),
+        ("Nazwisko:", Config.logged_in_user_info.last_name),
+        ("Hasło:", Config.logged_in_user_info.password),
+        ("Login:", Config.logged_in_user_info.login),
+        ("Email:", Config.logged_in_user_info.email)
+    ]
+
+    y = 1
+    for attribute, value in list_of_user_info:
+        label = Label(user_label, text=f"{attribute} {value}", font=("Arial", 12), bg="#A9A9A9", anchor=W)
+        label.place(x=87, y=y * 70 + 150, width=320)
+        entry = Entry(user_label, font=("Arial", 12), bg="#A9A9A9", borderwidth=0, disabledbackground="#A9A9A9")
+        entry.place(x=87, y=y * 70 + 175, width=256, height=25)
+        button = Button(user_label, text="Aktualizuj", bg="#A9A9A9",
+                        command=lambda label=label, entry=entry, attribute=attribute:
+                        update_user_data(label, entry, attribute))
+        button.place(x=345, y=y * 70 + 175)
+        if y == 4 or y == 5:
+            entry.insert("0", "Nie możesz zmienić tych danych")
+            entry["state"] = "disabled"
+            button["state"] = "disabled"
+
+        y += 1
+
+    Button(user_label, text="Cofnij", width=30, bg="#A9A9A9",
+           command=lambda: init_start_label(root)).place(x=135, y=560)
+    Config.current_page = user_label
+
+
+def init_add_question_label(root):
+    Config.current_page.destroy()
+    Config.photo = PhotoImage(file="background.png")
+    add_question_label = Label(root, width=500, height=700, image=Config.photo)
+    add_question_label.pack()
+    Label(add_question_label, text="Dodaj pytanie", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
+
+    parts_of_question = ("Treść pytania:",
+                         "Odpowiedź A:",
+                         "Odpowiedź B:",
+                         "Odpowiedź C:",
+                         "Odpowiedź D:",
+                         "Poprawna odpowiedź:",
+                         "Trudność (0-11):"
+                         )
+
+    y = 1
+    list_of_entries = []
+    for element in parts_of_question:
+        Label(add_question_label, text=element, font=("Arial", 12), bg="#A9A9A9",
+              anchor=W).place(x=50, y=y*40+200, width=165)
+        entry = Entry(add_question_label, font=("Arial", 12), bg="#A9A9A9", borderwidth=0)
+        entry.place(x=230, y=y*40+200, width=220, height=24)
+        list_of_entries.append(entry)
+        y += 1
+
+    Button(add_question_label, text="Dodaj pytanie", bg="#A9A9A9",
+           command=lambda: add_questions(list_of_entries)).place(x=366, y=515)
+
+    Button(add_question_label, text="Cofnij", width=30, bg="#A9A9A9",
+           command=lambda: init_start_label(root)).place(x=135, y=560)
+
+    Config.current_page = add_question_label
 
 
 def init_best_scores_window(best_scores):
@@ -104,7 +179,7 @@ def init_best_scores_window(best_scores):
     best_scores_window.geometry(f"{best_scores_window_width}x{best_scores_window_height}+{center_x}+{center_y}")
     best_scores_window.title("Najlepsze wyniki")
     best_scores_window.resizable(width=True, height=True)
-    best_scores_window.config(bg="blue")
+    best_scores_window.config(bg="#D3D3D3")
     login_icon = PhotoImage(file="millionaire_icon.png")
     best_scores_window.wm_iconphoto(False, login_icon)
     Label(best_scores_window, text="Lista najlepszych wyników", font=("Arial", 13), width=44).place(x=0, y=10)
@@ -113,8 +188,6 @@ def init_best_scores_window(best_scores):
     scrollbar = Scrollbar(best_scores_window, command=text.yview)
     scrollbar.place(x=382, y=35, height=564)
     text["yscrollcommand"] = scrollbar.set
-    text["state"] = "normal"
-    text.delete("1.0", END)
     number_of_position = 1
     place_in_the_table = 1
     for player in best_scores:
@@ -231,6 +304,10 @@ def init_activation_window(activation_number, first_name, last_name, login, pass
 
 # Initialization game label.
 def init_game_label(root):
+    if not Config.is_game_playing:
+        Config.is_game_playing = True
+        Config.game_start_time = datetime.now()
+
     # Start start_question theme and then queue question_theme.
     run_theme("start_question_mp3.mp3", "question_theme_mp3.mp3")
     # Destroying current_page.
@@ -238,7 +315,7 @@ def init_game_label(root):
     # Drawing question with the current difficulty level.
     question = draw_question()
     # Assignment new photo to global Config.photo.
-    Config.photo = PhotoImage(file="background.png")
+    Config.photo = PhotoImage(file="in_game.png")
     # Making game_label.
     game_label = Label(root, width=500, height=700, image=Config.photo)
     game_label.pack()
@@ -286,8 +363,8 @@ def init_game_label(root):
     fifty_fifty_button["bg"] = ["#A9A9A9"] if Config.is_fifty_fifty_available else ["#473a3a"]
     # Making end_game_button with function init_end_game with current_won parameter
     end_game_button = Button(game_label, text="Zakończ gre", bg="#A9A9A9", anchor=W, disabledforeground="black",
-                             command=lambda current_won=Config.list_of_amounts[Config.current_question_number-1]
-                             : init_end_label(root, current_won))
+                             command=lambda current_won=Config.list_of_amounts[Config.current_question_number-1]:
+                             init_end_label(root, current_won))
     end_game_button.place(x=415, y=10)
     # Variable y for positioning amount labels.
     y = 1
@@ -317,6 +394,7 @@ def init_game_label(root):
 
 # initialization end label.
 def init_end_label(root, current_won):
+    game_duration = datetime.now() - Config.game_start_time
     # Start millioner theme and then queue main_theme.
     run_theme("millioner_mp3.mp3", "main_theme_mp3.mp3")
     # destroying current_page.
@@ -325,16 +403,38 @@ def init_end_label(root, current_won):
     Config.is_fifty_fifty_available = True
     Config.current_question_number = 0
     Config.guaranteed_amount = 0
+    Config.is_game_playing = False
+    Config.game_start_time = None
     # Assignment new photo into global Config.photo.
-    Config.photo = PhotoImage(file="background_start.png")
+    Config.photo = PhotoImage(file="background.png")
     # Making end_label.
+    five_best_scores = download_best_scores(limit=5)
+    points = int(current_won / game_duration.total_seconds())
     end_label = Label(root, width=500, height=700, image=Config.photo)
     end_label.pack()
     Label(end_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
-    Label(end_label, text=f"Wygrana kwota: {current_won} zł", font=("Arial", 25), bg="#A9A9A9",
-          width=26).place(x=0, y=250)
+    Label(end_label, text=f"Wygrana kwota: {current_won} zł", font=("Arial", 25),
+          bg="#A9A9A9").place(x=0, y=230, width=500)
+    Label(end_label, text=f"Twoj wynik: {points} pkt.", font=("Arial", 9), bg="#A9A9A9").place(x=0, y=274, width=500)
+    Label(end_label, text="TOP 5 GRACZY:", font=("Arial", 14), bg="#A9A9A9").place(x=0, y=310, width=500)
+
+    y = 1
+    for user in five_best_scores:
+        first_name = user["first_name"]
+        last_name = user["last_name"]
+        points = user["points"]
+        Label(end_label, text=f"{first_name} {last_name}", font=("Arial", 10), bg="#A9A9A9", width=24,
+              anchor=W).place(x=110, y=y*30+320)
+        Label(end_label, text=f"{points} pkt.", font=("Arial", 10), bg="#A9A9A9", width=8,
+              anchor=E).place(x=310, y=y*30+320)
+        y += 1
+
     # Button to move user to start label.
     Button(end_label, text="Wyjdź do menu", width=30, bg="#A9A9A9",
            command=lambda: init_start_label(root)).place(x=135, y=500)
+
+    if points > 1000 and Config.is_user_logged_in:
+        send_score(points)
+
     # Assignment end_label into current_page.
     Config.current_page = end_label

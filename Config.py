@@ -1,4 +1,6 @@
 # Global variables for app
+game_start_time = None
+is_game_playing = False
 current_page = None
 photo = None
 is_user_logged_in = False
