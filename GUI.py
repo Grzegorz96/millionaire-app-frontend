@@ -1,48 +1,48 @@
+# Modules import.
 from tkinter import *
 from datetime import datetime
+# Config module for global variables.
 import Config
+# Functions module for executing functions and connecting with Backend_requests module.
 from Functions import draw_question, run_theme, check_answer, fifty_fifty, validation_for_register, logout_user, \
     check_activation_number, validation_for_login, download_best_scores, send_score, update_user_data, delete_user, \
-    add_questions
+    add_questions, update_date
 
 
 # Initialization main window of app.
 def init_main_window():
+    # Making instance of Tk() class. It is main object of app, every single object which will be created,
+    # will be added (Inheritance) into root and packing/placing into root.
     root = Tk()
+    # Definition width and height of app window.
     window_width = 500
     window_height = 700
+    # Definition width and height of monitor window.
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
+    # Setting center of window
     center_x = int(screen_width / 2 - window_width / 2)
     center_y = int(screen_height / 2 - window_height / 2)
+    # Making tittle, geometry, resizable, color background, photos.
     root.geometry(f"{window_width}x{window_height}+{center_x}+{center_y}")
     root.title("MILLIONAIRE.APP")
-    root.resizable(width=True, height=True)
+    root.resizable(width=False, height=False)
     root.config(bg="#B0C4DE")
-    root.call("wm", "iconphoto", root._w, PhotoImage(file="millionaire_icon.png"))
+    root.call("wm", "iconphoto", root._w, PhotoImage(file="photos/millionaire_icon.png"))
     # Start start_soundtrack theme and then queue main_theme.
     run_theme("start_soundtrack_mp3.mp3", "main_theme_mp3.mp3")
-    # Return root object into Main
+    # Return root object into Main module.
     return root
 
 
 # Initialization time label.
 def init_date(root):
+    # Init time label.
     time_label = Label(root, width=71)
+    # Packing time label into root.
     time_label.pack()
-    # Starting update date.
+    # Starting update date function from Functions.
     update_date(root, time_label)
-
-
-# Updating date
-def update_date(root, time_label):
-    # assignment new date and time from now to variables.
-    date = f"{datetime.now().date()}"
-    time = f"{datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}"
-    # Config time_label for new data.
-    time_label.config(text=f"{date} {time}")
-    # Recursion of function after 1s.
-    root.after(1000, update_date, root, time_label)
 
 
 # Initialization authentication label.
@@ -51,7 +51,7 @@ def init_authentication_label(root):
     if isinstance(Config.current_page, Label):
         Config.current_page.destroy()
 
-    Config.photo = PhotoImage(file="background.png")
+    Config.photo = PhotoImage(file="photos/background.png")
     authentication_label = Label(root, width=500, height=700, image=Config.photo)
     authentication_label.pack()
     # Making labels and buttons.
@@ -70,7 +70,7 @@ def init_authentication_label(root):
 def init_start_label(root):
     # destroying current_page and then assignment this into now label.
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="background.png")
+    Config.photo = PhotoImage(file="photos/background.png")
     start_label = Label(root, width=500, height=700, image=Config.photo)
     start_label.pack()
     # Making label and buttons.
@@ -79,6 +79,8 @@ def init_start_label(root):
            command=lambda: init_game_label(root)).place(x=135, y=500)
     Button(start_label, text="Najlepsze wyniki", width=30, bg="#A9A9A9",
            command=lambda: download_best_scores(init_best_scores_window=init_best_scores_window)).place(x=135, y=530)
+    # In case of user is logged in, your account button, logout button and add questions button will be initialized
+    # instead of back button.
     if Config.is_user_logged_in:
         Button(start_label, text="Twoje konto", bg="#A9A9A9",
                command=lambda: init_user_label(root)).place(x=355, y=10)
@@ -91,18 +93,21 @@ def init_start_label(root):
         Button(start_label, text="Cofnij", width=30, bg="#A9A9A9",
                command=lambda: init_authentication_label(root)).place(x=135, y=560)
 
+    # Assignment start_label into global current_page.
     Config.current_page = start_label
 
 
+# Initialization user label.
 def init_user_label(root):
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="background.png")
+    Config.photo = PhotoImage(file="photos/background.png")
     user_label = Label(root, width=500, height=700, image=Config.photo)
     user_label.pack()
     Label(user_label, text="Panel użytkownika", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
+    # Creating button for deleting account.
     Button(user_label, text="Usuń konto", bg="#A9A9A9",
            command=lambda: delete_user(init_authentication_label, root)).place(x=418, y=10)
-
+    # List of data for display for user.
     list_of_user_info = [
         ("Imie:", Config.logged_in_user_info.first_name),
         ("Nazwisko:", Config.logged_in_user_info.last_name),
@@ -111,35 +116,41 @@ def init_user_label(root):
         ("Email:", Config.logged_in_user_info.email)
     ]
 
+    # Init labels and entries for updating user's data.
     y = 1
     for attribute, value in list_of_user_info:
         label = Label(user_label, text=f"{attribute} {value}", font=("Arial", 12), bg="#A9A9A9", anchor=W)
         label.place(x=87, y=y * 70 + 150, width=320)
         entry = Entry(user_label, font=("Arial", 12), bg="#A9A9A9", borderwidth=0, disabledbackground="#A9A9A9")
         entry.place(x=87, y=y * 70 + 175, width=256, height=25)
+        # Init buttons for updating particular fields.
         button = Button(user_label, text="Aktualizuj", bg="#A9A9A9",
                         command=lambda label=label, entry=entry, attribute=attribute:
                         update_user_data(label, entry, attribute))
         button.place(x=345, y=y * 70 + 175)
+        # Login and Email has unique value in database and user cant change this data, buttons and entries for these
+        # fields have disabled state.
         if y == 4 or y == 5:
             entry.insert("0", "Nie możesz zmienić tych danych")
             entry["state"] = "disabled"
             button["state"] = "disabled"
-
         y += 1
 
+    # Init back to start label button.
     Button(user_label, text="Cofnij", width=30, bg="#A9A9A9",
            command=lambda: init_start_label(root)).place(x=135, y=560)
+    # Assignment user_label into global current_page.
     Config.current_page = user_label
 
 
+# Initialization add question label.
 def init_add_question_label(root):
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="background.png")
+    Config.photo = PhotoImage(file="photos/background.png")
     add_question_label = Label(root, width=500, height=700, image=Config.photo)
     add_question_label.pack()
     Label(add_question_label, text="Dodaj pytanie", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
-
+    # parts of question for displaying in add question label.
     parts_of_question = ("Treść pytania:",
                          "Odpowiedź A:",
                          "Odpowiedź B:",
@@ -149,8 +160,11 @@ def init_add_question_label(root):
                          "Trudność (0-11):"
                          )
 
+    # Variable y for positioning labels and entries.
     y = 1
+    # Temporary list for adding entries to transfer into Functions.add_questions(list_of_entries).
     list_of_entries = []
+    # Making labels and entries and placing it into add_question_label.
     for element in parts_of_question:
         Label(add_question_label, text=element, font=("Arial", 12), bg="#A9A9A9",
               anchor=W).place(x=50, y=y*40+200, width=165)
@@ -159,75 +173,95 @@ def init_add_question_label(root):
         list_of_entries.append(entry)
         y += 1
 
+    # Buttons for adding question and backing into start label.
     Button(add_question_label, text="Dodaj pytanie", bg="#A9A9A9",
            command=lambda: add_questions(list_of_entries)).place(x=366, y=515)
-
     Button(add_question_label, text="Cofnij", width=30, bg="#A9A9A9",
            command=lambda: init_start_label(root)).place(x=135, y=560)
-
+    # Assignment add_question_label into global current_page.
     Config.current_page = add_question_label
 
 
+# Initialization best scores window with json of downloaded best_scores from API backend.
 def init_best_scores_window(best_scores):
+    # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
+    # this window will automatically close with.
     best_scores_window = Toplevel()
+    # Definition width and height of app window.
     best_scores_window_width = 400
     best_scores_window_height = 600
+    # Definition width and height of monitor window.
     screen_width = best_scores_window.winfo_screenwidth()
     screen_height = best_scores_window.winfo_screenheight()
+    # Definition centers
     center_x = int(screen_width / 2 - best_scores_window_width / 2)
     center_y = int(screen_height / 2 - best_scores_window_height / 2)
     best_scores_window.geometry(f"{best_scores_window_width}x{best_scores_window_height}+{center_x}+{center_y}")
+    # Making tittle, geometry, resizable, color background, photos.
     best_scores_window.title("Najlepsze wyniki")
-    best_scores_window.resizable(width=True, height=True)
+    best_scores_window.resizable(width=False, height=False)
     best_scores_window.config(bg="#D3D3D3")
-    login_icon = PhotoImage(file="millionaire_icon.png")
+    login_icon = PhotoImage(file="photos/millionaire_icon.png")
     best_scores_window.wm_iconphoto(False, login_icon)
+    # Init label, text, scrollbar objects.
     Label(best_scores_window, text="Lista najlepszych wyników", font=("Arial", 13), width=44).place(x=0, y=10)
     text = Text(best_scores_window, bg="#D3D3D3", borderwidth=0, font=("Arial", 12))
     text.place(x=0, y=35, height=564, width=382)
     scrollbar = Scrollbar(best_scores_window, command=text.yview)
     scrollbar.place(x=382, y=35, height=564)
     text["yscrollcommand"] = scrollbar.set
+
+    # Iterating at dictionary of best_scores downloaded from backend.
     number_of_position = 1
     place_in_the_table = 1
     for player in best_scores:
         first_name = player["first_name"]
         last_name = player["last_name"]
         points = player["points"]
+        # Setting position for particular text insert.
         position = f"{number_of_position}.0"
+        # Insertion string into text object.
         text.insert(position, f"Miejsce {place_in_the_table}:{'':<5} {first_name} {last_name} - {points}\n\n")
+        # Adding integers to variables for getting other values in the next loop.
         number_of_position += 2
         place_in_the_table += 1
+
+    # After adding all scores into text object, text state changes into disabled.
     text["state"] = "disabled"
 
 
 # Initialization login window.
 def init_login_window(root):
-    # Making new instance of TopLevel().
+    # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
+    # this window will automatically close with.
     login_window = Toplevel()
+    # Definition width and height of app window.
     login_window_width = 300
     login_window_height = 150
+    # Definition width and height of monitor window.
     screen_width = login_window.winfo_screenwidth()
     screen_height = login_window.winfo_screenheight()
+    # Definition centers.
     center_x = int(screen_width / 2 - login_window_width / 2)
     center_y = int(screen_height / 2 - login_window_height / 2)
+    # Making tittle, geometry, resizable, color background, photos.
     login_window.geometry(f"{login_window_width}x{login_window_height}+{center_x}+{center_y}")
     login_window.title("Logowanie")
-    login_window.resizable(width=True, height=True)
+    login_window.resizable(width=False, height=False)
     login_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="login.png")
+    login_icon = PhotoImage(file="photos/login.png")
     login_window.wm_iconphoto(False, login_icon)
     # Making labels, entries and button.
     Label(login_window, text="Logowanie", font=("Arial", 13), width=33).place(x=0, y=10)
-
+    # Label and entry for login input.
     Label(login_window, text="Login", width=7).place(x=235, y=50)
     login_entry = Entry(login_window, width=30, font=("Arial", 10))
     login_entry.place(x=10, y=50)
-
+    # Label and entry for password input.
     Label(login_window, text="Hasło", width=7).place(x=235, y=80)
     password_entry = Entry(login_window, width=30, font=("Arial", 10))
     password_entry.place(x=10, y=80)
-
+    # Button for start login process. Going to Functions.validation_for_login.
     Button(login_window, text="Zaloguj", width=8,
            command=lambda: validation_for_login(login_entry, password_entry, login_window,
                                                 init_start_label, root)).place(x=225, y=110)
@@ -235,75 +269,92 @@ def init_login_window(root):
 
 # Initialization register window.
 def init_register_window():
-    # Making instance of TopLevel().
+    # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
+    # this window will automatically close with.
     register_window = Toplevel()
+    # Definition width and height of app window.
     register_window_width = 300
     register_window_height = 240
+    # Definition width and height of monitor window.
     screen_width = register_window.winfo_screenwidth()
     screen_height = register_window.winfo_screenheight()
+    # Definition centers.
     center_x = int(screen_width / 2 - register_window_width / 2)
     center_y = int(screen_height / 2 - register_window_height / 2)
+    # Making tittle, geometry, resizable, color background, photos.
     register_window.geometry(f"{register_window_width}x{register_window_height}+{center_x}+{center_y}")
     register_window.title("Rejestracja")
-    register_window.resizable(width=True, height=True)
+    register_window.resizable(width=False, height=False)
     register_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="login.png")
+    login_icon = PhotoImage(file="photos/login.png")
     register_window.wm_iconphoto(False, login_icon)
     # Making labels, entries and button.
     Label(register_window, text="Tworzenie konta", font=("Arial", 13), width=33).place(x=0, y=10)
-
+    # Label and entry for first name input.
     Label(register_window, text="Imie", width=7).place(x=235, y=50)
     first_name_entry = Entry(register_window, width=30, font=("Arial", 10))
     first_name_entry.place(x=10, y=50)
-
+    # Label and entry for last name input.
     Label(register_window, text="Nazwisko", width=7).place(x=235, y=80)
     last_name_entry = Entry(register_window, width=30, font=("Arial", 10))
     last_name_entry.place(x=10, y=80)
-
+    # Label and entry for login input.
     Label(register_window, text="Login", width=7).place(x=235, y=110)
     login_entry = Entry(register_window, width=30, font=("Arial", 10))
     login_entry.place(x=10, y=110)
-
+    # Label and entry for password input.
     Label(register_window, text="Hasło", width=7).place(x=235, y=140)
     password_entry = Entry(register_window, width=30, font=("Arial", 10))
     password_entry.place(x=10, y=140)
-
+    # Label and entry for E-mail input.
     Label(register_window, text="Email", width=7).place(x=235, y=170)
     email_entry = Entry(register_window, width=30, font=("Arial", 10))
     email_entry.place(x=10, y=170)
-
+    # Button for start process of validation.
     Button(register_window, text="Zarejestruj", width=8,
            command=lambda: validation_for_register(first_name_entry, last_name_entry, login_entry, password_entry,
                                                    email_entry, register_window,
                                                    init_activation_window)).place(x=225, y=200)
 
 
+# Activation window initialization
 def init_activation_window(activation_number, first_name, last_name, login, password, email):
+    # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
+    # this window will automatically close with.
     activation_window = Toplevel()
+    # Definition width and height of app window.
     activation_window_width = 300
     activation_window_height = 150
+    # Definition width and height of monitor window.
     screen_width = activation_window.winfo_screenwidth()
     screen_height = activation_window.winfo_screenheight()
+    # Definition centers.
     center_x = int(screen_width / 2 - activation_window_width / 2)
     center_y = int(screen_height / 2 - activation_window_height / 2)
+    # Making tittle, geometry, resizable, color background, photos.
     activation_window.geometry(f"{activation_window_width}x{activation_window_height}+{center_x}+{center_y}")
     activation_window.title("Aktywacja konta")
-    activation_window.resizable(width=True, height=True)
+    activation_window.resizable(width=False, height=False)
     activation_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="login.png")
+    login_icon = PhotoImage(file="photos/login.png")
     activation_window.wm_iconphoto(False, login_icon)
+    # Label and entry for putting number that was sent to the user's email.
     Label(activation_window, text="Aktywacja konta", font=("Arial", 13), width=33).place(x=0, y=10)
     activation_entry = Entry(activation_window, width=23, font=("Arial", 13))
     activation_entry.place(x=15, y=71)
+    # Button for checking if number is correct, registration and activation user.
     Button(activation_window, text="Aktywuj",
            command=lambda: check_activation_number(activation_number, activation_entry, first_name, last_name,
                                                    login, password, email, activation_window)).place(x=230, y=70)
+    # Statement about sending the activation code to the e-mail address provided.
     Label(activation_window, text=f"Kod aktywacyjny został wysłany na adres:\n {email}",
           font=("Arial", 8)).place(x=0, y=110, width=300)
 
 
 # Initialization game label.
 def init_game_label(root):
+    # With start game_label, checking if global is_game_playing is True. When False,
+    # changing into True and getting the time to global game_start_time.
     if not Config.is_game_playing:
         Config.is_game_playing = True
         Config.game_start_time = datetime.now()
@@ -315,7 +366,7 @@ def init_game_label(root):
     # Drawing question with the current difficulty level.
     question = draw_question()
     # Assignment new photo to global Config.photo.
-    Config.photo = PhotoImage(file="in_game.png")
+    Config.photo = PhotoImage(file="photos/in_game.png")
     # Making game_label.
     game_label = Label(root, width=500, height=700, image=Config.photo)
     game_label.pack()
@@ -324,9 +375,13 @@ def init_game_label(root):
           font=("Arial", 15)).place(x=135, y=425)
     # Making text of question content.
     question_text = Text(game_label, width=49, height=6, bg="#A9A9A9", font=("Arial", 12))
+    # Placing text at game_label.
     question_text.place(x=25, y=460)
+    # Inserting the content of the question into question_text object.
     question_text.insert("1.0", question["content"])
+    # Setting question_text state at disabled, it's only for reading.
     question_text["state"] = "disabled"
+
     # Making list of A,B,C,D strings for initialization content of questions and response indication for a given button.
     a_b_c_d = ["A", "B", "C", "D"]
     # Making list of content answers.
@@ -366,6 +421,7 @@ def init_game_label(root):
                              command=lambda current_won=Config.list_of_amounts[Config.current_question_number-1]:
                              init_end_label(root, current_won))
     end_game_button.place(x=415, y=10)
+
     # Variable y for positioning amount labels.
     y = 1
     # List of indexes for guaranteed amounts.
@@ -388,12 +444,15 @@ def init_game_label(root):
                 amount.config(bg="#B8860B")
         # Adding +=1 to y for positioning next label.
         y += 1
-    # Assignment game_label into current_page.
+
+    # Assignment game_label into global current_page.
     Config.current_page = game_label
 
 
 # initialization end label.
 def init_end_label(root, current_won):
+    # Creating a game_duration object. From object datetime.now() subtracting global object game_start_time, created
+    # with starting game in game_label.
     game_duration = datetime.now() - Config.game_start_time
     # Start millioner theme and then queue main_theme.
     run_theme("millioner_mp3.mp3", "main_theme_mp3.mp3")
@@ -406,19 +465,26 @@ def init_end_label(root, current_won):
     Config.is_game_playing = False
     Config.game_start_time = None
     # Assignment new photo into global Config.photo.
-    Config.photo = PhotoImage(file="background.png")
-    # Making end_label.
+    Config.photo = PhotoImage(file="photos/background.png")
+    # Downloading five best scores from backed API
     five_best_scores = download_best_scores(limit=5)
-    points = int(current_won / game_duration.total_seconds())
+    # Creating numbers of points. Current_won is divided by game_duration in seconds and converted into integer.
+    points_earned = int(current_won / game_duration.total_seconds())
+    # Making end_label.
     end_label = Label(root, width=500, height=700, image=Config.photo)
     end_label.pack()
+    # Making Labels and placing them on end_label object.
     Label(end_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
     Label(end_label, text=f"Wygrana kwota: {current_won} zł", font=("Arial", 25),
           bg="#A9A9A9").place(x=0, y=230, width=500)
-    Label(end_label, text=f"Twoj wynik: {points} pkt.", font=("Arial", 9), bg="#A9A9A9").place(x=0, y=274, width=500)
+    Label(end_label, text=f"Twoj wynik: {points_earned} pkt.", font=("Arial", 9), bg="#A9A9A9").place(x=0, y=274,
+                                                                                                      width=500)
     Label(end_label, text="TOP 5 GRACZY:", font=("Arial", 14), bg="#A9A9A9").place(x=0, y=310, width=500)
 
+    # Variable y for positioning labels of user's points
     y = 1
+    # Iterating at json of five best scores and adding information about player and his score into labels, then placing
+    # it at end_label.
     for user in five_best_scores:
         first_name = user["first_name"]
         last_name = user["last_name"]
@@ -432,9 +498,10 @@ def init_end_label(root, current_won):
     # Button to move user to start label.
     Button(end_label, text="Wyjdź do menu", width=30, bg="#A9A9A9",
            command=lambda: init_start_label(root)).place(x=135, y=500)
+    
+    # If player achieved more than 1000 points and also is logged in, his score will be saved in database.
+    if points_earned > 1000 and Config.is_user_logged_in:
+        send_score(points_earned)
 
-    if points > 1000 and Config.is_user_logged_in:
-        send_score(points)
-
-    # Assignment end_label into current_page.
+    # Assignment end_label into global current_page.
     Config.current_page = end_label

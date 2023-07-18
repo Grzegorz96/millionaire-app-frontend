@@ -1,3 +1,4 @@
+# User Class for Global logged_in_user_info variable
 class User:
     def __init__(self, active_flag, email, first_name, last_name, login, password, user_id, access_token,
                  refresh_token):
@@ -10,4 +11,3 @@ class User:
         self.user_id = user_id
         self.access_token = access_token
         self.refresh_token = refresh_token
-
