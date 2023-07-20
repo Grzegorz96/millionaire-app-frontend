@@ -307,7 +307,7 @@ def check_answer(question, selected_answer, init_game_label, root, answer_button
 # Function fifty_fifty.
 def fifty_fifty(question, list_of_buttons, fifty_fifty_button):
     # Making object of fifty/fifty sound effect, setting volume on 0.5 and run.
-    fifty_fifty_sound = mixer.Sound(r"sounds\fifty_fifty_wav.wav")
+    fifty_fifty_sound = mixer.Sound(r"sounds/fifty_fifty_wav.wav")
     fifty_fifty_sound.set_volume(0.5)
     fifty_fifty_sound.play()
     # Setting global is_fifty_fifty_available on False.
@@ -343,13 +343,13 @@ def init_sound_mixer():
 def run_theme(theme1, theme2=False):
     # Called without queue
     if not theme2:
-        mixer.music.load(fr"sounds\{theme1}")
+        mixer.music.load(fr"sounds/{theme1}")
         mixer.music.play()
     # Called with queue
     else:
-        mixer.music.load(fr"sounds\{theme1}")
+        mixer.music.load(fr"sounds/{theme1}")
         mixer.music.play()
-        mixer.music.queue(fr"sounds\{theme2}", loops=-1)
+        mixer.music.queue(fr"sounds/{theme2}", loops=-1)
 
 
 # Download best scores function. It can be called with limit or without limit.
@@ -512,11 +512,11 @@ def delete_user(init_authentication_label, root):
 # Add question function.
 def add_questions(list_of_entries):
     # Validations for user's entry: content, answer A, answer B, answer C, answer D, right answer, difficulty.
-    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{5,120}$", list_of_entries[0].get()):
-        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[1].get()):
-            if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[2].get()):
-                if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[3].get()):
-                    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*?/{}() ]{2,45}$", list_of_entries[4].get()):
+    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{5,120}$", list_of_entries[0].get()):
+        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[1].get()):
+            if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[2].get()):
+                if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[3].get()):
+                    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[4].get()):
                         if match("^[ABCD]$", list_of_entries[5].get()):
                             if match("^(0|1|2|3|4|5|6|7|8|9|10|11)$", list_of_entries[6].get()):
                                 # If everything ok, then creating request_body with json of question.
