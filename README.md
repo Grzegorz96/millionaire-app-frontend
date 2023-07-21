@@ -30,9 +30,20 @@ The program consists of 6 modules and each of them is responsible for something 
 
 ## Technology used
 
-**Client:** Python, Tkinter, Pygame.mixer, requests
+**Client:** 
+- Language: Python
+- Libraries:
+Tkinter,
+Pygame,
+requests
 
-**Server:** Python, Flask, SQL (MySQL)
+**Server:** 
+- Language: Python, SQL
+- Libraies:
+Flask,
+PyJWT,
+mysql-connector-python,
+python-dotenv
 
 
 ## Installation
