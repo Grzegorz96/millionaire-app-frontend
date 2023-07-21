@@ -1,7 +1,7 @@
 ![logo frontend](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/1b1610c8-d435-47a3-92be-df9ce009fef5)
 # MILLIONAIRE.app
 
-Millionaire.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. This program is written and optimized for windows.
+MILLIONAIRE.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. This program is written and optimized for windows.
 
 
 ## Features
@@ -63,7 +63,7 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 ```bash
  py .\Main.py
 ```
-Program Millionaire.app connects to the enpoints on the cloud server, you don't need to create a local server.
+Program MILLIONAIRE.app connects to the enpoints on the cloud server, you don't need to create a local server.
 
 
 ## Lessons Learned
@@ -83,6 +83,11 @@ While creating this project, I learned how to combine many programs. I've worked
 - [@Grzegorz96](https://www.github.com/Grzegorz96)
 
 
+## Contact
+
+E-mail: grzesstrzeszewski@gmail.com
+
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -99,5 +104,3 @@ While creating this project, I learned how to combine many programs. I've worked
 ![aktywacja](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/2004f0e4-f070-441e-81fa-6a02ced31fa6)
 ![uzytkownik](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/40a62b7b-5231-4fc8-8fa2-cb5da70a3269)
 ![email](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/5b353fd9-2afc-4918-9471-5cda04d8b7f2)
-
-
