@@ -3,6 +3,7 @@
 
 Millionaire.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. 
 
+
 ## Features
 
 - Login/ Logout
@@ -16,4 +17,13 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 - Automatic refresh of JWT access tokens
 - Download questions from the database and randomizing questions to the user, taking into account the current level.
 - Sounds system
-- 50/50 system
+- 50/50 function
+- Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
+
+
+## Technology used
+
+**Client:** Python, Tkinter, Pygame.mixer, requests
+
+**Server:** Python, Flask, SQL (MySQL)
+
