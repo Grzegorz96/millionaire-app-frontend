@@ -42,7 +42,6 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 ### For manually launching the application on the IDE:
 #### Requirements:
 - Python 3.11
-- mysql-connector-python 8.0.33
 - pygame 2.5.0
 - requests 2.31.0
 #### Instruction:
@@ -55,7 +54,6 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 - Install required packages on your venv:
 
 ```bash
-  pip install mysql-connector-python
   pip install pygame
   pip install requests 
 ```
