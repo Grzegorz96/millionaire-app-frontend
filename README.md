@@ -6,18 +6,18 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 
 ## Features
 
-- Login/ Logout
-- Register / Deleting account
-- JSON Web Token for user authentication
-- Sending emails with an activation number to the account
-- Adding your own questions by the user
-- Updating and displaying logged in user 
-- Displaying top players
-- Adding top players
-- Automatic refresh of JWT access tokens
+- Login/ Logout.
+- Register/ Deleting account.
+- JSON Web Token for user authentication.
+- Sending emails with an activation number to the account.
+- Adding your own questions by the user.
+- Updating and displaying logged in user.
+- Displaying top players.
+- Adding top players.
+- Automatic refresh of JWT access tokens.
 - Download questions from the database and randomizing questions to the user, taking into account the current level.
-- Sounds system
-- 50/50 function
+- Sounds system.
+- 50/50 function.
 - Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
 
 
@@ -27,3 +27,39 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 
 **Server:** Python, Flask, SQL (MySQL)
 
+
+## Installation
+
+### To quickly launch the application on windows:
+- Make new directory on your computer.
+- Download millionaire-app-frontend repository:
+```bash
+ git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
+```
+- Enter the directory exe_millionaire_app.
+- Run Millionaire_app.exe.
+
+### For manually launching the application on the IDE:
+#### Requirements:
+- Python 3.11
+- mysql-connector-python 8.0.33
+- pygame 2.5.0
+- requests 2.31.0
+#### Instruction:
+- Make new directory on your computer.
+- Download millionaire-app-frontend repository:
+```bash
+ git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
+```
+- Open the "Frontend" on your IDE.
+- Install required packages on your venv:
+
+```bash
+  pip install mysql-connector-python
+  pip install pygame
+  pip install requests 
+```
+- Run Main.py:
+```bash
+ py .\Main.py
+```
