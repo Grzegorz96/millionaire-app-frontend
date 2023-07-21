@@ -1,7 +1,7 @@
 ![logo frontend](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/1b1610c8-d435-47a3-92be-df9ce009fef5)
 # MILLIONAIRE.app
 
-Millionaire.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. 
+Millionaire.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. This program is written and optimized for windows.
 
 
 ## Features
@@ -62,3 +62,13 @@ Millionaire.app is my original project, a clone of the popular millionaires game
  py .\Main.py
 ```
 Program Millionaire.app connects to the enpoints on the cloud server, you don't need to create a local server.
+
+
+## Lessons Learned
+
+While creating this project, I learned how to combine many programs. I've worked on different libraries with different technologies. I had to implement JWT tokens myself so that the frontend program could catch the returned new access tokens, overwrite the expired one in the user object and repeat the query again. I created user login and registration logic so that all processes are safe for the user. Another challenge was the implementation of the e-mail sender to confirm the user's e-mail before registering. I learned to connect with the proprietary API that performs queries on the database. It also took me a long time to catch most of the bugs and handle them. I also increased my skills in creating program logic. I gained knowledge about the implementation of graphic and sound files in the application.
+
+
+## Authors
+
+- [@Grzegorz96](https://www.github.com/Grzegorz96)
