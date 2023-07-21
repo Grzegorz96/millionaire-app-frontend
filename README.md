@@ -31,19 +31,12 @@ The program consists of 6 modules and each of them is responsible for something 
 ## Technology used
 
 **Client:** 
-- Language: Python
-- Libraries:
-Tkinter,
-Pygame,
-requests
+- Languages: Python
+- Third Party Libraries: Tkinter, Pygame, requests
 
 **Server:** 
-- Language: Python, SQL
-- Libraies:
-Flask,
-PyJWT,
-mysql-connector-python,
-python-dotenv
+- Languages: Python, SQL
+- Third Party Libraries: Flask, PyJWT, mysql-connector-python, python-dotenv
 
 
 ## Installation
