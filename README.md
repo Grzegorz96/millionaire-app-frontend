@@ -61,3 +61,4 @@ Millionaire.app is my original project, a clone of the popular millionaires game
 ```bash
  py .\Main.py
 ```
+Program Millionaire.app connects to the enpoints on the cloud server, you don't need to create a local server.
