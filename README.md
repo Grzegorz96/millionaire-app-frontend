@@ -37,6 +37,8 @@ The program consists of 6 modules and each of them is responsible for something 
 **Server:** 
 - Languages: Python, SQL
 - Third Party Libraries: Flask, PyJWT, mysql-connector-python, python-dotenv
+- Hosting for API: www.pythonanywhere.com
+- Hosting for MySQL database: www.pythonanywhere.com
 
 
 ## Installation
