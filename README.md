@@ -53,6 +53,7 @@ The program consists of 6 modules and each of them is responsible for something 
 
 ### For manually launching the application on the IDE:
 #### Requirements:
+##### Programs and libraries:
 - Python 3.11
 - pygame 2.5.0
 - requests 2.31.0
