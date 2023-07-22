@@ -42,12 +42,11 @@ The program consists of 6 modules and each of them is responsible for something 
 ## Installation
 
 ### To quickly launch the application on windows:
-- Make new directory on your computer.
 - Download millionaire-app-frontend repository:
 ```bash
  git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
 ```
-- Enter the directory exe_millionaire_app.
+- Enter the directory millionaire-app-frontend/exe_millionaire_app.
 - Run Millionaire_app.exe.
 
 ### For manually launching the application on the IDE:
@@ -56,12 +55,11 @@ The program consists of 6 modules and each of them is responsible for something 
 - pygame 2.5.0
 - requests 2.31.0
 #### Instruction:
-- Make new directory on your computer.
 - Download millionaire-app-frontend repository:
 ```bash
  git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
 ```
-- Open the "Frontend" on your IDE.
+- Open the millionaire-app-frontend on your IDE.
 - Install required packages on your venv:
 
 ```bash
