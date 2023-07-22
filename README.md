@@ -101,14 +101,21 @@ E-mail: grzesstrzeszewski@gmail.com
 
 
 ## Screnshoots
-##### Screenshot of user authorization
+##### Screenshot of the user authorization panel
 ##### Screenshot of the login and registration window
 ![apka](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a1fe5e2d-9e49-4e17-bfb3-f1ed88d97cec)
 ![apka z oknami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/58ccf70d-99da-4838-be5c-1840164cb002)
+##### Screenshot of the highscore list
+##### Screenshot of the add questions panel
 ![apka z wynikami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/b07055e6-c47f-4e70-af77-8828d4a2b2fb)
 ![pytania](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/161bd253-1113-4a90-a6b9-8469a4cc9100)
+##### Screenshot of end game panel
+##### Screenshot of the game panel
 ![end panel](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/62011be5-f93a-448e-84e6-276d6ad7e8bc)
 ![gra](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d2adaff7-aa17-405a-ab40-4e8cc9db2f06)
+##### Screenshot of the window for entering the generated activation number from the e-mail
+##### Screenshot of the panel for changing user data
 ![aktywacja](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/2004f0e4-f070-441e-81fa-6a02ced31fa6)
 ![uzytkownik](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/40a62b7b-5231-4fc8-8fa2-cb5da70a3269)
+##### Email sent from the email sender
 ![email](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/5b353fd9-2afc-4918-9471-5cda04d8b7f2)
