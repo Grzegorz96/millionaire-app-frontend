@@ -11,9 +11,9 @@ The program consists of 6 modules and each of them is responsible for something 
 
 ## Features
 
-- 2 step Login
+- 2 step login verification
 - Log out
-- 3 step Register 
+- 3 step register verification
 - Deleting account
 - JSON Web Token for user authentication.
 - Sending emails with an activation number to the account.
@@ -101,7 +101,7 @@ E-mail: grzesstrzeszewski@gmail.com
 
 
 ## Screnshoots
-
+##### jakis opis
 ![apka](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a1fe5e2d-9e49-4e17-bfb3-f1ed88d97cec)
 ![apka z oknami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/58ccf70d-99da-4838-be5c-1840164cb002)
 ![apka z wynikami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/b07055e6-c47f-4e70-af77-8828d4a2b2fb)
