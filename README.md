@@ -11,10 +11,10 @@ The program consists of 6 modules and each of them is responsible for something 
 
 ## Features
 
-- Two-step login verification
-- Log out
-- Three-step registration verification
-- Deleting account
+- Two-step login verification.
+- User logout.
+- Three-step registration verification.
+- Deleting account.
 - JSON Web Token for user authentication.
 - Sending emails with an activation number to the account.
 - Adding your own questions by the user.
