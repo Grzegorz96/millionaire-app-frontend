@@ -50,7 +50,7 @@ The program consists of 6 modules and each of them is responsible for something 
  git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
 ```
 - Enter the directory millionaire-app-frontend/exe_millionaire_app.
-- If you want to move the Millionaire.exe file, do it together with the Sounds and Photos folders. You can also create a copy of the .exe file on your desktop.
+- If you want to move the Millionaire_app.exe file, do it together with the Sounds and Photos folders. You can also create a copy of the .exe file on your desktop.
 - Run Millionaire_app.exe.
 
 ### For manually launching the application on the IDE:
