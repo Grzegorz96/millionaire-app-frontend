@@ -69,7 +69,7 @@ The program consists of 6 modules and each of them is responsible for something 
   pip install pygame
   pip install requests 
 ```
-- Run Main.py:
+- Run Main.py on Windows:
 ```bash
  py .\Main.py
 ```
