@@ -1,7 +1,7 @@
 ![logo frontend](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/1b1610c8-d435-47a3-92be-df9ce009fef5)
 # MILLIONAIRE.app
 
-MILLIONAIRE.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the API and database at pythonanywhere hosting. This program is written and optimized for windows.  
+MILLIONAIRE.app is my original project, a clone of the popular millionaires game show. The program allows users to join the community and compete with each other, thanks to the system of points received after the end of the game. All operations using data in this application are performed through the proprietary API and database at pythonanywhere hosting. This program is written and optimized for windows.  
 
 
 ## Description of the modules
@@ -19,12 +19,12 @@ The program consists of 6 modules and each of them is responsible for something 
 - Sending emails with an activation number to the account.
 - Adding your own questions by the user.
 - Updating and displaying logged in user.
-- Displaying top players.
-- Adding top players.
+- Displaying scores of top players.
+- Adding scores of top players.
 - Automatic refresh of JWT access tokens.
 - Download questions from the database and randomizing questions to the user, taking into account the current level.
 - Sounds system.
-- 50/50 function.
+- Random rejection of two incorrect answers - - - System of points. 
 - Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
 
 
