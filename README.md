@@ -25,7 +25,8 @@ The program consists of 6 modules and each of them is responsible for something 
 - Download questions from the database and randomizing questions to the user, taking into account the current level.
 - Sounds system.
 - Random rejection of two incorrect answers. 
-- System of points. 
+- System of points.
+- Clock updating every second.
 - Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
 
 
