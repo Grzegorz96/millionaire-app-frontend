@@ -29,6 +29,7 @@ The program consists of 6 modules and each of them is responsible for something 
 - Clock updating every second.
 - Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
 - Validation of entered data.
+- Handling response errors from the server.
 
 ## Technology used
 
