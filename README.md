@@ -30,6 +30,7 @@ The program consists of 6 modules and each of them is responsible for something 
 - Ending the game with a guaranteed amount during a wrong answer, arbitrarily withdrawing from the game or by answering all questions correctly.
 - Validation of entered data.
 - Handling response errors from the server.
+- Dynamic display of the list of in-game amounts.
 
 ## Technology used
 
@@ -124,5 +125,13 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of the panel for changing user data
 ![aktywacja](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/2004f0e4-f070-441e-81fa-6a02ced31fa6)
 ![uzytkownik](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/40a62b7b-5231-4fc8-8fa2-cb5da70a3269)
+##### Screenshot of the selected answer in the game.
+##### Screenshot of selecting the correct answer in the game.
+![seleced](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/788f5fd3-4cb6-435c-b2db-738f7622ec61)
+![right](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d12a189b-9126-47f6-829e-32d667f68e51)
+##### Screenshot of choosing the wrong answer in the game.
+##### Screenshot of using the 50/50 feature
+![falilure](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a7094e29-b1b2-4030-81fd-c3d911a2f272)
+![5050](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/e9cbb604-fbfb-4970-86de-57d331ec3bdf)
 ##### Email sent from the email sender
 ![email](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/5b353fd9-2afc-4918-9471-5cda04d8b7f2)
