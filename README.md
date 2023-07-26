@@ -52,7 +52,7 @@ The program consists of 6 modules and each of them is responsible for something 
 ```bash
  git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
 ```
-- Enter the directory millionaire-app-frontend/exe_millionaire_app.
+- Enter the directory millionaire-app-frontend/millionaire_app_exe.
 - If you want to move the Millionaire_app.exe file, do it together with the sounds and photos folders. You can also create a copy of the .exe file on your desktop.
 - Run Millionaire_app.exe.
 
