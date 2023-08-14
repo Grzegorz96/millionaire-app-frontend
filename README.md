@@ -15,7 +15,7 @@ The program consists of 6 modules and each of them is responsible for something 
 ###### - Getting access token, refresh token and user id.
 ###### - Getting informations about user using tokens and id.
 - User logout.
-- Three-step registration verification.
+- Three-step registration verification:
 ###### - Checking if the user is not already in the database.
 ###### - Email confirmation by the user with an activation code.
 ###### - Placing user data in the database.
