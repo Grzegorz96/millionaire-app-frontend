@@ -12,7 +12,7 @@ The program consists of 6 modules and each of them is responsible for something 
 ## Features
 
 - Two-step login verification:
-##### - Getting access token, refresh token and user id.
+##### Getting access token, refresh token and user id.
 ##### - Getting informations about user using tokens and id.
 - User logout.
 - Three-step registration verification.
