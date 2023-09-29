@@ -99,6 +99,7 @@ While creating this project, I learned how to combine many programs. I've worked
 - The function of adding more questions from a .json file after prior validation. There is already such a function on the backend.
 - The function of resetting the password to the account via a code sent to the e-mail.
 - The function of restoring a deleted account via a code sent to an e-mail.
+- Questions added should not go directly to the "questions" table, but first to a substitute table, and only after the administrator's verification should they be transferred to the main table.
 
 
 ## Authors
