@@ -240,6 +240,8 @@ def init_login_window(root):
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     login_window = Toplevel()
+    # Adding a window to the global list to remove all active windows after login and logout.
+    Config.active_windows.append(login_window)
     # Definition width and height of app window.
     login_window_width = 300
     login_window_height = 150
@@ -281,6 +283,8 @@ def init_register_window():
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     register_window = Toplevel()
+    # Adding a window to the global list to remove all active windows after login and logout.
+    Config.active_windows.append(register_window)
     # Definition width and height of app window.
     register_window_width = 300
     register_window_height = 240
@@ -336,6 +340,8 @@ def init_activation_window(activation_number, first_name, last_name, login, pass
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     activation_window = Toplevel()
+    # Adding a window to the global list to remove all active windows after login and logout.
+    Config.active_windows.append(activation_window)
     # Definition width and height of app window.
     activation_window_width = 300
     activation_window_height = 150

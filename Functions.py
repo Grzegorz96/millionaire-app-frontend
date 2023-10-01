@@ -206,9 +206,13 @@ def validation_for_login(login_entry, password_entry, login_window, init_start_l
                         user_info["access_token"],
                         user_info["refresh_token"]
                     )
-                    # Destroying itself login window and also automatically starting start_label with global
-                    # is_user_logged_in flag=True.
-                    login_window.destroy()
+
+                    # Destroying active_windows.
+                    for window in Config.active_windows:
+                        window.destroy()
+
+                    Config.active_windows.clear()
+                    # Automatically starting start_label with global is_user_logged_in flag=True.
                     init_start_label(root)
                     # Creating a login success message.
                     messagebox.showinfo("Pomyślnie zalogowano.", "Zostałeś pomyślnie zalogowany.")
