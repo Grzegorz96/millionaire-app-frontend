@@ -2,7 +2,7 @@
 game_start_time = None
 is_game_playing = False
 current_page = None
-photo = None
+images = {}
 is_user_logged_in = False
 logged_in_user_info = None
 is_fifty_fifty_available = True

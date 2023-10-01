@@ -1,7 +1,8 @@
-# User Class for Global logged_in_user_info variable
 class User:
+    """User class, after the user logs in, the retrieved data will be assigned to the fields of the user object."""
     def __init__(self, active_flag, email, first_name, last_name, login, password, user_id, access_token,
                  refresh_token):
+        """Constructor for the User class."""
         self.active_flag = active_flag
         self.email = email
         self.first_name = first_name

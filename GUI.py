@@ -9,8 +9,8 @@ from Functions import draw_question, run_theme, check_answer, fifty_fifty, valid
     add_questions, update_date
 
 
-# Initialization main window of app.
 def init_main_window():
+    """The function responsible for initialization main widow of application and returning it."""
     # Making instance of Tk() class. It is main object of app, every single object which will be created,
     # will be added (Inheritance) into root and packing/placing into root.
     root = Tk()
@@ -23,20 +23,25 @@ def init_main_window():
     # Setting center of window
     center_x = int(screen_width / 2 - window_width / 2)
     center_y = int(screen_height / 2 - window_height / 2)
-    # Making tittle, geometry, resizable, color background, photos.
+    # Making tittle, geometry, resizable, color background, icon.
     root.geometry(f"{window_width}x{window_height}+{center_x}+{center_y}")
     root.title("MILLIONAIRE.APP")
     root.resizable(width=False, height=False)
     root.config(bg="#B0C4DE")
-    root.call("wm", "iconphoto", root._w, PhotoImage(file="photos/millionaire_icon.png"))
+
+    try:
+        root.call("wm", "iconphoto", root._w, PhotoImage(file="photos/millionaire_icon.png"))
+    except TclError:
+        pass
+
     # Start start_soundtrack theme and then queue main_theme.
     run_theme("start_soundtrack_mp3.mp3", "main_theme_mp3.mp3")
     # Return root object into Main module.
     return root
 
 
-# Initialization time label.
 def init_date(root):
+    """The function responsible for initialization time_label and start update_date function."""
     # Init time label.
     time_label = Label(root, width=71)
     # Packing time label into root.
@@ -45,14 +50,13 @@ def init_date(root):
     update_date(root, time_label)
 
 
-# Initialization authentication label.
 def init_authentication_label(root):
+    """The function responsible for initialization authentication_label."""
     # Function called first time will not enter this part of code, because current_page = None.
     if isinstance(Config.current_page, Label):
         Config.current_page.destroy()
 
-    Config.photo = PhotoImage(file="photos/background.png")
-    authentication_label = Label(root, width=500, height=700, image=Config.photo)
+    authentication_label = Label(root, width=500, height=700, image=Config.images["background"])
     authentication_label.pack()
     # Making labels and buttons.
     Label(authentication_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
@@ -66,12 +70,11 @@ def init_authentication_label(root):
     Config.current_page = authentication_label
 
 
-# Initialization start label.
 def init_start_label(root):
+    """The function responsible for initialization start_label."""
     # destroying current_page and then assignment this into now label.
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="photos/background.png")
-    start_label = Label(root, width=500, height=700, image=Config.photo)
+    start_label = Label(root, width=500, height=700, image=Config.images["background"])
     start_label.pack()
     # Making label and buttons.
     Label(start_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)
@@ -97,11 +100,10 @@ def init_start_label(root):
     Config.current_page = start_label
 
 
-# Initialization user label.
 def init_user_label(root):
+    """The function responsible for initialization user_label for user account management."""
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="photos/background.png")
-    user_label = Label(root, width=500, height=700, image=Config.photo)
+    user_label = Label(root, width=500, height=700, image=Config.images["background"])
     user_label.pack()
     Label(user_label, text="Panel użytkownika", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
     # Creating button for deleting account.
@@ -143,11 +145,10 @@ def init_user_label(root):
     Config.current_page = user_label
 
 
-# Initialization add question label.
 def init_add_question_label(root):
+    """The function responsible for initialization add_question_label for adding new questions by users."""
     Config.current_page.destroy()
-    Config.photo = PhotoImage(file="photos/background.png")
-    add_question_label = Label(root, width=500, height=700, image=Config.photo)
+    add_question_label = Label(root, width=500, height=700, image=Config.images["background"])
     add_question_label.pack()
     Label(add_question_label, text="Dodaj pytanie", font=("Arial", 35), bg="#A9A9A9").place(x=0, y=150, width=500)
     # parts of question for displaying in add question label.
@@ -182,8 +183,8 @@ def init_add_question_label(root):
     Config.current_page = add_question_label
 
 
-# Initialization best scores window with json of downloaded best_scores from API backend.
 def init_best_scores_window(best_scores):
+    """The function responsible for initialization additional best_score_window for displaying scores."""
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     best_scores_window = Toplevel()
@@ -201,8 +202,12 @@ def init_best_scores_window(best_scores):
     best_scores_window.title("Najlepsze wyniki")
     best_scores_window.resizable(width=False, height=False)
     best_scores_window.config(bg="#D3D3D3")
-    login_icon = PhotoImage(file="photos/millionaire_icon.png")
-    best_scores_window.wm_iconphoto(False, login_icon)
+
+    try:
+        best_scores_window.wm_iconphoto(False, PhotoImage(file="photos/millionaire_icon.png"))
+    except TclError:
+        pass
+
     # Init label, text, scrollbar objects.
     Label(best_scores_window, text="Lista najlepszych wyników", font=("Arial", 13), width=44).place(x=0, y=10)
     text = Text(best_scores_window, bg="#D3D3D3", borderwidth=0, font=("Arial", 12))
@@ -230,8 +235,8 @@ def init_best_scores_window(best_scores):
     text["state"] = "disabled"
 
 
-# Initialization login window.
 def init_login_window(root):
+    """The function responsible for initialization additional login_window for logging users."""
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     login_window = Toplevel()
@@ -249,8 +254,12 @@ def init_login_window(root):
     login_window.title("Logowanie")
     login_window.resizable(width=False, height=False)
     login_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="photos/login.png")
-    login_window.wm_iconphoto(False, login_icon)
+
+    try:
+        login_window.wm_iconphoto(False, PhotoImage(file="photos/login.png"))
+    except TclError:
+        pass
+
     # Making labels, entries and button.
     Label(login_window, text="Logowanie", font=("Arial", 13), width=33).place(x=0, y=10)
     # Label and entry for login input.
@@ -267,8 +276,8 @@ def init_login_window(root):
                                                 init_start_label, root)).place(x=225, y=110)
 
 
-# Initialization register window.
 def init_register_window():
+    """The function responsible for initialization additional register_window for registering users."""
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     register_window = Toplevel()
@@ -286,8 +295,12 @@ def init_register_window():
     register_window.title("Rejestracja")
     register_window.resizable(width=False, height=False)
     register_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="photos/login.png")
-    register_window.wm_iconphoto(False, login_icon)
+
+    try:
+        register_window.wm_iconphoto(False, PhotoImage(file="photos/login.png"))
+    except TclError:
+        pass
+
     # Making labels, entries and button.
     Label(register_window, text="Tworzenie konta", font=("Arial", 13), width=33).place(x=0, y=10)
     # Label and entry for first name input.
@@ -317,8 +330,9 @@ def init_register_window():
                                                    init_activation_window)).place(x=225, y=200)
 
 
-# Activation window initialization
 def init_activation_window(activation_number, first_name, last_name, login, password, email):
+    """The function responsible for initialization additional activation window for enter the received activation
+    number."""
     # Making instance of Toplevel class this is object which also inherits from Tk() when root window will close,
     # this window will automatically close with.
     activation_window = Toplevel()
@@ -336,8 +350,12 @@ def init_activation_window(activation_number, first_name, last_name, login, pass
     activation_window.title("Aktywacja konta")
     activation_window.resizable(width=False, height=False)
     activation_window.config(bg="#B0C4DE")
-    login_icon = PhotoImage(file="photos/login.png")
-    activation_window.wm_iconphoto(False, login_icon)
+
+    try:
+        activation_window.wm_iconphoto(False, PhotoImage(file="photos/login.png"))
+    except TclError:
+        pass
+
     # Label and entry for putting number that was sent to the user's email.
     Label(activation_window, text="Aktywacja konta", font=("Arial", 13), width=33).place(x=0, y=10)
     activation_entry = Entry(activation_window, width=23, font=("Arial", 13))
@@ -351,8 +369,8 @@ def init_activation_window(activation_number, first_name, last_name, login, pass
           font=("Arial", 8)).place(x=0, y=110, width=300)
 
 
-# Initialization game label.
 def init_game_label(root):
+    """The function responsible for initialization game_label for displaying the game."""
     # With start game_label, checking if global is_game_playing is True. When False,
     # changing into True and getting the time to global game_start_time.
     if not Config.is_game_playing:
@@ -365,10 +383,8 @@ def init_game_label(root):
     Config.current_page.destroy()
     # Drawing question with the current difficulty level.
     question = draw_question()
-    # Assignment new photo to global Config.photo.
-    Config.photo = PhotoImage(file="photos/in_game.png")
     # Making game_label.
-    game_label = Label(root, width=500, height=700, image=Config.photo)
+    game_label = Label(root, width=500, height=700, image=Config.images["in_game"])
     game_label.pack()
     # Making number of question label.
     Label(game_label, text=f"Pytanie: {Config.current_question_number+1}", bg="#A9A9A9", width=20,
@@ -449,8 +465,9 @@ def init_game_label(root):
     Config.current_page = game_label
 
 
-# initialization end label.
 def init_end_label(root, current_won):
+    """The function responsible for initialization end_label, displaying five best scores, optionally adding user's
+    score to the database."""
     # Creating a game_duration object. From object datetime.now() subtracting global object game_start_time, created
     # with starting game in game_label.
     game_duration = datetime.now() - Config.game_start_time
@@ -464,14 +481,12 @@ def init_end_label(root, current_won):
     Config.guaranteed_amount = 0
     Config.is_game_playing = False
     Config.game_start_time = None
-    # Assignment new photo into global Config.photo.
-    Config.photo = PhotoImage(file="photos/background.png")
     # Downloading five best scores from backed API
     five_best_scores = download_best_scores(limit=5)
     # Creating numbers of points. Current_won is divided by game_duration in seconds and converted into integer.
     points_earned = int(current_won / game_duration.total_seconds())
     # Making end_label.
-    end_label = Label(root, width=500, height=700, image=Config.photo)
+    end_label = Label(root, width=500, height=700, image=Config.images["background"])
     end_label.pack()
     # Making Labels and placing them on end_label object.
     Label(end_label, text="MILIONERZY", font=("Arial", 35), bg="#A9A9A9").place(x=100, y=150)

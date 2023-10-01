@@ -5,6 +5,7 @@ from re import match
 from random import choice
 from pygame import mixer
 from tkinter import messagebox
+from tkinter import *
 # Module Backend_requests for executing requests.
 from Backend_requests import registration_user_request, send_activation_number_request, \
     get_questions_request, login_user_request, get_user_info_request, check_for_registration_request, \
@@ -16,9 +17,9 @@ from User_class import User
 from datetime import datetime
 
 
-# Updating date.
 def update_date(root, time_label):
-    # assignment new date and time from now to variables.
+    """The function responsible for updating time_label every second."""
+    # Assignment new date and time from now to variables.
     date = f"{datetime.now().date()}"
     time = f"{datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}"
     # Config time_label for new data.
@@ -27,9 +28,10 @@ def update_date(root, time_label):
     root.after(1000, update_date, root, time_label)
 
 
-# The function for downloading questions, it called in Main module one time, when the program starts.
 def download_questions():
-    # response variable for get_question_request which located in Backend_requests module.
+    """The function responsible for calling the function sending a request to download questions from database and
+    handling the received response. This function is called from Main module one time, when the program starts."""
+    # Response variable for get_question_request which located in Backend_requests module.
     response_for_downloading_questions = get_questions_request()
     # If status code of response will be 200, then global variable list_of_questions will be assigned to [json]
     # list of dictionaries of questions.
@@ -42,9 +44,23 @@ def download_questions():
         exit()
 
 
-# Validation function for registration.
+def load_images():
+    """The function responsible for loading static images to global dictionary."""
+    try:
+        Config.images["background"] = PhotoImage(file="photos/background.png")
+    except TclError:
+        Config.images["background"] = None
+    try:
+        Config.images["in_game"] = PhotoImage(file="photos/in_game.png")
+    except TclError:
+        Config.images["in_game"] = None
+
+
 def validation_for_register(first_name_entry, last_name_entry, login_entry, password_entry, email_entry,
                             register_window, init_activation_window):
+    """The function responsible for validating the data entered for registration and calling the function sending
+    the checking registration request. If successful, it will send a request to send the activation number to the user's
+    email. The function handles the returned response."""
     # Assigning variables to user's input from entry objects by method .get().
     first_name = first_name_entry.get()
     last_name = last_name_entry.get()
@@ -106,9 +122,10 @@ def validation_for_register(first_name_entry, last_name_entry, login_entry, pass
         messagebox.showerror("Niepoprawne imię.", "Wprowadzono niepoprawne dane imienia.")
 
 
-# The function of checking the activation number and adding a validated user in the database.
 def check_activation_number(activation_number, activation_entry, first_name, last_name, login, password, email,
                             activation_window):
+    """The function responsible for checking the activation number. If successful, it will invoke a function that sends
+    a request to add a user to the database."""
     # Checking whether the number data entered by the user is consistent with the generated code sent to his email.
     if activation_entry.get() == activation_number:
         # If activation number is correct then program can add this user into database.
@@ -148,12 +165,13 @@ def check_activation_number(activation_number, activation_entry, first_name, las
                              f"Wpisany numer aktywacyjny nie pasuje do numeru wysłanego na adres {email}.")
 
 
-# Validation function for login
 def validation_for_login(login_entry, password_entry, login_window, init_start_label, root):
-    # Assignment variables to user's input
+    """The function responsible for validating the entered data, calling the function sending a request for the user ID
+    and JWT tokens, and calling the function sending a request for downloading the logged-in user's data."""
+    # Assignment variables to user's input.
     login = login_entry.get()
     password = password_entry.get()
-    # Validation user's input
+    # Validation user's input.
     if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9]{5,45}$", login):
         if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9!@#$%^&*]{7,45}$", password):
             # If validation passes, then program send login and password into database by backend and try to take
@@ -216,8 +234,8 @@ def validation_for_login(login_entry, password_entry, login_window, init_start_l
         messagebox.showerror("Niepoprawny login.", "Wprowadzono niepoprawne dane loginu.")
 
 
-# Logout function.
 def logout_user(init_authentication_label, root):
+    """The function responsible for deleting the user object and changing the login flag to False."""
     # Setting default values of global is_user_logged_in and logged_in_user_info.
     Config.is_user_logged_in = False
     Config.logged_in_user_info = None
@@ -227,8 +245,9 @@ def logout_user(init_authentication_label, root):
     messagebox.showinfo("Pomyślnie wylogowano.", "Zostałeś pomyślnie wylogowany.")
 
 
-# Function for drawing question from global list_of_question with particular difficulty level.
 def draw_question():
+    """The function responsible for drawing a question with the appropriate level of difficulty from the list and
+    finally deleting it."""
     # Making local list for questions with current difficulty.
     list_of_questions_for_current_difficulty = []
     # Adding into list questions with specific difficulty from global current_question_number.
@@ -243,35 +262,35 @@ def draw_question():
     return question
 
 
-# Function for checking selected question.
 def check_answer(question, selected_answer, init_game_label, root, answer_button, list_of_buttons, init_end_label,
                  end_game_button, fifty_fifty_button):
-    # Sub function for checking selected question called after 4.6s.
+    """The function responsible for preparing the user to check the selected question."""
     def checking():
+        """The function responsible for checking selected question called after 4.6s."""
         # Comparing selected answer into value from question["right_answer"].
         if selected_answer == question["right_answer"]:
             # If enter into this statement, theme "win" starts.
             run_theme("win_mp3.mp3")
-            # Adding 1 to current_question_number for drawing next level question and init new labels on game_label
+            # Adding 1 to current_question_number for drawing next level question and init new labels on game_label.
             Config.current_question_number += 1
             # Selected right button will change color on green.
             answer_button.config(bg="green")
             # Checking if user achieve guaranteed amounts. If he did then global guaranteed amount will change.
             if Config.current_question_number == 2:
                 Config.guaranteed_amount = 1000
-                # Program will run init_game_label after 4.5s
+                # Program will run init_game_label after 4.5s.
                 root.after(4500, init_game_label, root)
             elif Config.current_question_number == 7:
                 Config.guaranteed_amount = 40000
                 root.after(4500, init_game_label, root)
             # In case of user achieve 12 question number, global guaranteed amount will assignment into 1 000 000 and
-            # program will run init_end_label after 4.5s
+            # program will run init_end_label after 4.5s.
             elif Config.current_question_number == 12:
                 Config.guaranteed_amount = 1000000
                 current_won = Config.guaranteed_amount
                 root.after(4500, init_end_label, root, current_won)
             # In case of user just selected right answer but didn't achieve guaranteed amount then just will run into
-            # init_game_label after 4.5s
+            # init_game_label after 4.5s.
             else:
                 root.after(4500, init_game_label, root)
 
@@ -280,9 +299,9 @@ def check_answer(question, selected_answer, init_game_label, root, answer_button
             # Start fail theme.
             run_theme("fail_mp3.mp3")
             # Setting right button on green light.
-            for obj in list_of_buttons:
-                if question["right_answer"] == obj[1]:
-                    obj[0].config(bg="green")
+            for element in list_of_buttons:
+                if question["right_answer"] == element[1]:
+                    element[0].config(bg="green")
             # Setting wrong selected button on red light.
             answer_button.config(bg="red")
             # Assignment into local variable current_won value from global guaranteed amount.
@@ -304,8 +323,8 @@ def check_answer(question, selected_answer, init_game_label, root, answer_button
     root.after(4600, checking)
 
 
-# Function fifty_fifty.
 def fifty_fifty(question, list_of_buttons, fifty_fifty_button):
+    """The function responsible for randomly rejecting two incorrect answers."""
     # Making object of fifty/fifty sound effect, setting volume on 0.5 and run.
     fifty_fifty_sound = mixer.Sound(r"sounds/fifty_fifty_wav.wav")
     fifty_fifty_sound.set_volume(0.5)
@@ -319,7 +338,7 @@ def fifty_fifty(question, list_of_buttons, fifty_fifty_button):
     wrong_answers = ["A", "B", "C", "D"]
     # Removing right answer from list.
     wrong_answers.remove(question["right_answer"])
-    # Draw one wrong answer
+    # Draw one wrong answer.
     drawn_answer = choice(wrong_answers)
     # Removing drawn wrong answer from list.
     wrong_answers.remove(drawn_answer)
@@ -332,15 +351,15 @@ def fifty_fifty(question, list_of_buttons, fifty_fifty_button):
             button[0]["text"] = ""
 
 
-# Initialization sound mixer for app.
 def init_sound_mixer():
+    """The function responsible for initializing the sound mixer for application."""
     mixer.init()
     # Setting volume on 0.2.
     mixer.music.set_volume(0.2)
 
 
-# Function for run themes in app. In case of function is called with one argument there won't be queue.
 def run_theme(theme1, theme2=False):
+    """The function responsible for running themes in application."""
     # Called without queue
     if not theme2:
         mixer.music.load(fr"sounds/{theme1}")
@@ -352,8 +371,9 @@ def run_theme(theme1, theme2=False):
         mixer.music.queue(fr"sounds/{theme2}", loops=-1)
 
 
-# Download best scores function. It can be called with limit or without limit.
 def download_best_scores(init_best_scores_window=None, limit=None):
+    """The function responsible for calling the function sending a request to download the best results from the
+    database."""
     # Creating response and calling the get_bet_scores_request.
     response_for_download_best_scores = get_best_scores_request(limit)
     # If response status is 200 then the program will assign json from request body to best scores variable.
@@ -372,8 +392,8 @@ def download_best_scores(init_best_scores_window=None, limit=None):
                              "Nie udało się pobrać najlepszych wyników, spróbuj ponownie później.")
 
 
-# Send score function with achieved points by user.
 def send_score(points):
+    """The function responsible for calling the function sending a request to place user's points in the database."""
     # Creating response and calling the send_score_request.
     response_for_sending_score = send_score_request(points)
     # If response status is 201, we have 2 options for this. Second of them is that we got response without
@@ -408,9 +428,10 @@ def send_score(points):
                              "W chwili obecnej nie możemy zapisać Twojego wyniku, gdyż wystąpił błąd.")
 
 
-# Update user function.
 def update_user_data(label, entry, attribute):
-    # new value variable from user's input and request_body = None if validation for input would be wrong.
+    """The function responsible for validating the data entered by the user and calling the function sending a request
+    for user updates in the database."""
+    # new_value variable from user's input and request_body = None if validation for input would be wrong.
     new_value = entry.get()
     request_body = None
     # If transferred attribute into function is "Imie:" that mean user try to update first_name for user object.
@@ -482,8 +503,8 @@ def update_user_data(label, entry, attribute):
                                  "W chwili obecnej nie możemy zaktualizować użykownika, gdyż wystąpił błąd.")
 
 
-# Delete user function.
 def delete_user(init_authentication_label, root):
+    """The function responsible for calling the function that sends a request to delete the user."""
     # Creating response and calling the delete_user_request.
     response_for_deleting_user = delete_user_request()
     # If response status is 200, creating message and calling logout_user function.
@@ -509,14 +530,15 @@ def delete_user(init_authentication_label, root):
                              "W chwili obecnej nie możemy usunąć konta, gdyż wystąpił błąd.")
 
 
-# Add question function.
 def add_questions(list_of_entries):
+    """The function responsible for validating the data entered by the user and calling the function sending a request
+    to add a question to the database."""
     # Validations for user's entry: content, answer A, answer B, answer C, answer D, right answer, difficulty.
-    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{5,120}$", list_of_entries[0].get()):
-        if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[1].get()):
-            if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[2].get()):
-                if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[3].get()):
-                    if match("^[A-ZĘÓĄŚŁŻŹĆŃa-zęóąśłżźćń0-9:!,„”.@#$%^&*?/{}() ]{2,45}$", list_of_entries[4].get()):
+    if match("^.{5,120}$", list_of_entries[0].get()):
+        if match("^.{2,45}$", list_of_entries[1].get()):
+            if match("^.{2,45}$", list_of_entries[2].get()):
+                if match("^.{2,45}$", list_of_entries[3].get()):
+                    if match("^.{2,45}$", list_of_entries[4].get()):
                         if match("^[ABCD]$", list_of_entries[5].get()):
                             if match("^(0|1|2|3|4|5|6|7|8|9|10|11)$", list_of_entries[6].get()):
                                 # If everything ok, then creating request_body with json of question.
@@ -544,6 +566,8 @@ def add_questions(list_of_entries):
                                     # If we got 201 without "access-token" header we create message for user that
                                     # successfully added question.
                                     else:
+                                        for element in list_of_entries:
+                                            element.delete(0, END)
                                         messagebox.showinfo("Pomyślnie dodano pytanie",
                                                             "Twoje pytanie zostało pomyślnie dodane, dziękujemy!")
                                 # If we got 401, our session has expired, or we have problem with access or refresh

@@ -4,8 +4,8 @@ from requests import get, post, patch, delete, RequestException, Response
 import Config
 
 
-# Request function for getting question.
 def get_questions_request():
+    """The function responsible for sending a request to download questions from the database."""
     # Creating endpoint and calling GET method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/questions"
@@ -20,8 +20,8 @@ def get_questions_request():
         return response
 
 
-# Request function for checking info for registration with transferred login and email form Functions module.
 def check_for_registration_request(login, email):
+    """The function responsible for sending a request to check the availability of login and email in the database."""
     # Creating endpoint, request_body and calling GET method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/register/check-data"
@@ -40,8 +40,8 @@ def check_for_registration_request(login, email):
         return response
 
 
-# Request function for sending activation number with email parameter from Functions module.
 def send_activation_number_request(email):
+    """The function responsible for sending a request to send activation number to user's email."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/send-activation-number"
@@ -57,8 +57,8 @@ def send_activation_number_request(email):
         return response
 
 
-#  Request function for registration user with parameters transferred from Functions.
 def registration_user_request(first_name, last_name, login, password, email):
+    """The function responsible for sending a request to add user's data to the database."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/register"
@@ -80,8 +80,8 @@ def registration_user_request(first_name, last_name, login, password, email):
         return response
 
 
-# Request function for login user with login and password parameters transferred from Functions.
 def login_user_request(login, password):
+    """The function responsible for sending a request to get user's ID and JWT tokens from database (logging in)."""
     # Creating endpoint, request_body and calling GET method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/login"
@@ -100,8 +100,8 @@ def login_user_request(login, password):
         return response
 
 
-# Request functon for getting user info with user_id, access_token and refresh_token transferred from Functions.
 def get_user_info_request(user_id, access_token, refresh_token):
+    """The function responsible for sending a request to get user's data from database, using ID and JWT tokens."""
     # Creating endpoint, headers, subresource and calling GET method on this endpoint.
     try:
         url = f"http://Grzegorz96.pythonanywhere.com/users/{user_id}"
@@ -120,8 +120,8 @@ def get_user_info_request(user_id, access_token, refresh_token):
         return response
 
 
-# Request function for getting best scores with limit parameter transferred from Functions.
 def get_best_scores_request(limit):
+    """The function responsible for sending a request to get scores from database."""
     # Creating endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/scores"
@@ -142,8 +142,8 @@ def get_best_scores_request(limit):
         return response
 
 
-# Request function for sending score with points parameter.
 def send_score_request(points):
+    """The function responsible for sending a request to add user's score to the database, using JWT tokens."""
     # Creating endpoint, headers, request_body and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/scores"
@@ -166,8 +166,8 @@ def send_score_request(points):
         return response
 
 
-# Request function for updating user with already created request body from Functions.
 def update_user_request(request_body):
+    """The function responsible for sending a request to update user's data in the database, using JWT tokens."""
     # Creating endpoint, headers, subresource and calling PATCH method on this endpoint.
     try:
         url = f"http://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
@@ -187,8 +187,8 @@ def update_user_request(request_body):
         return response
 
 
-# Request function for deleting user.
 def delete_user_request():
+    """The function responsible for sending a request to delete user's data from the database, using JWT tokens."""
     # Creating endpoint, headers, subresource and calling DELETE method on this endpoint.
     try:
         url = f"http://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
@@ -208,8 +208,8 @@ def delete_user_request():
         return response
 
 
-# Request function for adding questions with already created request body from Functions.
 def add_questions_request(request_body):
+    """The function responsible for sending a request to add question to the database, using JWT tokens."""
     #  Creating endpoint, headers and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/questions"
