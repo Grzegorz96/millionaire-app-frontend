@@ -72,8 +72,17 @@ The program consists of 6 modules and each of them is responsible for something 
 ```bash
  git clone https://github.com/Grzegorz96/millionaire-app-frontend.git
 ```
+- Go to the millionaire-app-frontend directory.
 - Open the millionaire-app-frontend on your IDE.
-- Install required packages on your venv:
+- Create virtual enviroment for the project (Windows):
+```bash
+ py -m venv venv
+```
+- Activate virtual enviroment (Windows):
+```bash
+ venv/Scripts/activate.bat
+```
+- Install required packages on your virtual enviroment:
 ```bash
   pip install -r requirements.txt
 ```
