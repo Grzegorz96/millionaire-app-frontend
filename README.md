@@ -84,12 +84,12 @@ The program consists of 6 modules and each of them is responsible for something 
 ```
 - Install required packages on your virtual enviroment:
 ```bash
-  pip install -r requirements.txt
+ pip install -r requirements.txt
 ```
 - or
 ```bash
-  pip install pygame==2.5.0
-  pip install requests==2.31.0
+ pip install pygame==2.5.0
+ pip install requests==2.31.0
 ```
 - Run Main.py on Windows:
 ```bash
