@@ -100,6 +100,7 @@ While creating this project, I learned how to combine many programs. I've worked
 - The function of resetting the password to the account via a code sent to the e-mail.
 - The function of restoring a deleted account via a code sent to an e-mail.
 - Questions added should not go directly to the "questions" table, but first to a substitute table, and only after the administrator's verification should they be transferred to the main table.
+- Loading of sound files into the global "sounds" dictionary when running Main.py. During operation, the program will use sounds stored in memory instead of reading them directly from the computer.
 
 
 ## Authors
