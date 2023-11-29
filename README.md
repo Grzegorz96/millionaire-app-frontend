@@ -110,7 +110,7 @@ While creating this project, I learned how to combine many programs. I've worked
 - The function of restoring a deleted account via a code sent to an e-mail.
 - Questions added should not go directly to the "questions" table, but first to a substitute table, and only after the administrator's verification should they be transferred to the main table.
 - Loading of sound files into the global "sounds" dictionary when running Main.py. During operation, the program will use sounds stored in memory instead of reading them directly from the computer.
-- Currently, when questions from a given level are completed, an error will occur. The program should have 2 lists of questions, one main and the other for modification. If there are no questions on the "to be modified" list, the questions should be copied from the main list again, as it was handled in the newer version of the web application.
+- Currently, if the user has already selected all questions from a given level, an error will occur because after selecting a question, the question is removed from the list to prevent repetition. The program should have 2 lists of questions, one main and the other for modification. If there are no questions on the "to be modified" list, the questions should be copied from the main list again, as it was handled in the newer version of the web application.
 
 
 ## Authors
