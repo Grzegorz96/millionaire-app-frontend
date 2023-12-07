@@ -37,6 +37,7 @@ def download_questions():
     # list of dictionaries of questions.
     if response_for_downloading_questions.status_code == codes.ok:
         Config.list_of_questions = response_for_downloading_questions.json()["result"]
+        Config.current_list_of_questions = Config.list_of_questions.copy()
     # If status code will be 404 or 500 there will display communicate of error and app will automatically close.
     else:
         messagebox.showerror("Błąd podczas pobierania pytań z bazy danych.",
@@ -254,14 +255,20 @@ def draw_question():
     finally deleting it."""
     # Making local list for questions with current difficulty.
     list_of_questions_for_current_difficulty = []
-    # Adding into list questions with specific difficulty from global current_question_number.
-    for question in Config.list_of_questions:
-        if question["difficulty"] == Config.current_question_number:
-            list_of_questions_for_current_difficulty.append(question)
+    # Adding into list, questions with specific difficulty from global current_question_number.
+    while not list_of_questions_for_current_difficulty:
+        for question in Config.current_list_of_questions:
+            if question["difficulty"] == Config.current_question_number:
+                list_of_questions_for_current_difficulty.append(question)
+
+        # If all questions from a given level are finished, the list will refill.
+        if not list_of_questions_for_current_difficulty:
+            Config.current_list_of_questions = Config.list_of_questions.copy()
+
     # Drawing one question from local list with particular difficulty level.
     question = choice(list_of_questions_for_current_difficulty)
     # Removing drawn question from global list of all questions.
-    Config.list_of_questions.remove(question)
+    Config.current_list_of_questions.remove(question)
     # Return drawn question to game label.
     return question
 

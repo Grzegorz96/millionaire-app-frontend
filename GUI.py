@@ -127,8 +127,8 @@ def init_user_label(root):
         entry.place(x=87, y=y * 70 + 175, width=256, height=25)
         # Init buttons for updating particular fields.
         button = Button(user_label, text="Aktualizuj", bg="#A9A9A9",
-                        command=lambda label=label, entry=entry, attribute=attribute:
-                        update_user_data(label, entry, attribute))
+                        command=lambda current_label=label, current_entry=entry, current_attribute=attribute:
+                        update_user_data(current_label, current_entry, current_attribute))
         button.place(x=345, y=y * 70 + 175)
         # Login and Email has unique value in database and user cant change this data, buttons and entries for these
         # fields have disabled state.
@@ -422,8 +422,8 @@ def init_game_label(root):
             button = Button(game_label, text=f"{a_b_c_d[index]}: {list_of_answers[index]}", width=30, bg="#A9A9A9",
                             anchor=W, disabledforeground="black")
             # Creating function for particular buttons.
-            button.config(command=lambda selected_answer=a_b_c_d[index], button=button:
-                          check_answer(question, selected_answer, init_game_label, root, button,
+            button.config(command=lambda selected_answer=a_b_c_d[index], current_button=button:
+                          check_answer(question, selected_answer, init_game_label, root, current_button,
                           list_of_buttons, init_end_label, end_game_button, fifty_fifty_button))
             # Creating list of buttons for disable state of all buttons and in case when user select wrong button
             # function will find right button and change color on green.

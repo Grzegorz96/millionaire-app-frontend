@@ -22,20 +22,20 @@ def get_questions_request():
 
 def check_for_registration_request(login, email):
     """The function responsible for sending a request to check the availability of login and email in the database."""
-    # Creating endpoint, request_body and calling GET method on this endpoint.
+    # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/register/check-data"
         request_body = {
             "login": login,
             "email": email
         }
-        response = get(url, json=request_body)
+        response = post(url, json=request_body)
     # If cant connect with endpoint, making response object with 404 status code and return response.
     except RequestException:
         response = Response()
         response.status_code = 404
         return response
-    # If everything ok from frontend then just return the response from GET method.
+    # If everything ok from frontend then just return the response from POST method.
     else:
         return response
 
@@ -82,20 +82,20 @@ def registration_user_request(first_name, last_name, login, password, email):
 
 def login_user_request(login, password):
     """The function responsible for sending a request to get user's ID and JWT tokens from database (logging in)."""
-    # Creating endpoint, request_body and calling GET method on this endpoint.
+    # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
         url = "http://Grzegorz96.pythonanywhere.com/users/login"
         request_body = {
             "login": login,
             "password": password
         }
-        response = get(url, json=request_body)
+        response = post(url, json=request_body)
     # If cant connect with endpoint, making response object with 404 status code and return response.
     except RequestException:
         response = Response()
         response.status_code = 404
         return response
-    # If everything ok from frontend then just return the response from GET method.
+    # If everything ok from frontend then just return the response from POST method.
     else:
         return response
 
