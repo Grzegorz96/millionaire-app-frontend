@@ -33,7 +33,8 @@ def download_questions():
     handling the received response. This function is called from Main module one time, when the program starts."""
     # Response variable for get_question_request which located in Backend_requests module.
     response_for_downloading_questions = get_questions_request()
-    # If status code of response will be 200, then global variable list_of_questions will be assigned to [json]
+    # If status code of response will be 200, then global variable list_of_questions and its copy will be assigned to
+    # [json]
     # list of dictionaries of questions.
     if response_for_downloading_questions.status_code == codes.ok:
         Config.list_of_questions = response_for_downloading_questions.json()["result"]
