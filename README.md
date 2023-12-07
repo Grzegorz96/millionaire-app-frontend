@@ -36,6 +36,7 @@ The program consists of 6 modules and each of them is responsible for something 
 - Validation of entered data.
 - Handling response errors from the server.
 - Dynamic display of the list of in-game amounts.
+- Automatic replenishment of the question list when the questions run out.
 
 ## Technology used
 
