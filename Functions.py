@@ -555,15 +555,15 @@ def add_questions(list_of_entries):
                             if match("^(0|1|2|3|4|5|6|7|8|9|10|11)$", list_of_entries[6].get()):
                                 # If everything ok, then creating request_body with json of question.
                                 request_body = {
-                                      "tresc": list_of_entries[0].get(),
-                                      "odp": [
+                                      "content": list_of_entries[0].get(),
+                                      "answers": [
                                          list_of_entries[1].get(),
                                          list_of_entries[2].get(),
                                          list_of_entries[3].get(),
                                          list_of_entries[4].get()
                                       ],
-                                      "odp_poprawna": list_of_entries[5].get(),
-                                      "trudnosc": int(list_of_entries[6].get())
+                                      "right_answer": list_of_entries[5].get(),
+                                      "difficulty": int(list_of_entries[6].get())
                                 }
                                 # Creating response and calling the add_questions_request with request body.
                                 response_for_adding_questions = add_questions_request(request_body)

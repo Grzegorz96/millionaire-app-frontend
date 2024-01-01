@@ -8,7 +8,7 @@ def get_questions_request():
     """The function responsible for sending a request to download questions from the database."""
     # Creating endpoint and calling GET method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/questions"
+        url = "https://Grzegorz96.pythonanywhere.com/questions"
         response = get(url)
     # If cant connect with endpoint, making response object with 404 status code and return response.
     except RequestException:
@@ -24,7 +24,7 @@ def check_for_registration_request(login, email):
     """The function responsible for sending a request to check the availability of login and email in the database."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/users/register/check-data"
+        url = "https://Grzegorz96.pythonanywhere.com/users/register/check-data"
         request_body = {
             "login": login,
             "email": email
@@ -44,7 +44,7 @@ def send_activation_number_request(email):
     """The function responsible for sending a request to send activation number to user's email."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/users/send-activation-number"
+        url = "https://Grzegorz96.pythonanywhere.com/users/send-activation-number"
         request_body = {"email_receiver": email}
         response = post(url, json=request_body)
     # If cant connect with endpoint, making response object with 404 status code and return response.
@@ -61,7 +61,7 @@ def registration_user_request(first_name, last_name, login, password, email):
     """The function responsible for sending a request to add user's data to the database."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/users/register"
+        url = "https://Grzegorz96.pythonanywhere.com/users/register"
         request_body = {
             "first_name": first_name,
             "last_name": last_name,
@@ -84,7 +84,7 @@ def login_user_request(login, password):
     """The function responsible for sending a request to get user's ID and JWT tokens from database (logging in)."""
     # Creating endpoint, request_body and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/users/login"
+        url = "https://Grzegorz96.pythonanywhere.com/users/login"
         request_body = {
             "login": login,
             "password": password
@@ -104,7 +104,7 @@ def get_user_info_request(user_id, access_token, refresh_token):
     """The function responsible for sending a request to get user's data from database, using ID and JWT tokens."""
     # Creating endpoint, headers, subresource and calling GET method on this endpoint.
     try:
-        url = f"http://Grzegorz96.pythonanywhere.com/users/{user_id}"
+        url = f"https://Grzegorz96.pythonanywhere.com/users/{user_id}"
         headers = {
             "access-token": access_token,
             "refresh-token": refresh_token
@@ -124,7 +124,7 @@ def get_best_scores_request(limit):
     """The function responsible for sending a request to get scores from database."""
     # Creating endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/scores"
+        url = "https://Grzegorz96.pythonanywhere.com/scores"
         # If parameter limit != None then HTTP parameter limit is creating and calling GET method with this parameter.
         if limit:
             params = {"limit": limit}
@@ -146,7 +146,7 @@ def send_score_request(points):
     """The function responsible for sending a request to add user's score to the database, using JWT tokens."""
     # Creating endpoint, headers, request_body and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/scores"
+        url = "https://Grzegorz96.pythonanywhere.com/scores"
         headers = {
             "access-token": Config.logged_in_user_info.access_token,
             "refresh-token": Config.logged_in_user_info.refresh_token
@@ -170,7 +170,7 @@ def update_user_request(request_body):
     """The function responsible for sending a request to update user's data in the database, using JWT tokens."""
     # Creating endpoint, headers, subresource and calling PATCH method on this endpoint.
     try:
-        url = f"http://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
+        url = f"https://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
         headers = {
             "access-token": Config.logged_in_user_info.access_token,
             "refresh-token": Config.logged_in_user_info.refresh_token
@@ -191,7 +191,7 @@ def delete_user_request():
     """The function responsible for sending a request to delete user's data from the database, using JWT tokens."""
     # Creating endpoint, headers, subresource and calling DELETE method on this endpoint.
     try:
-        url = f"http://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
+        url = f"https://Grzegorz96.pythonanywhere.com/users/{Config.logged_in_user_info.user_id}"
         headers = {
             "access-token": Config.logged_in_user_info.access_token,
             "refresh-token": Config.logged_in_user_info.refresh_token
@@ -212,7 +212,7 @@ def add_questions_request(request_body):
     """The function responsible for sending a request to add question to the database, using JWT tokens."""
     #  Creating endpoint, headers and calling POST method on this endpoint.
     try:
-        url = "http://Grzegorz96.pythonanywhere.com/questions"
+        url = "https://Grzegorz96.pythonanywhere.com/questions"
         headers = {
             "access-token": Config.logged_in_user_info.access_token,
             "refresh-token": Config.logged_in_user_info.refresh_token
