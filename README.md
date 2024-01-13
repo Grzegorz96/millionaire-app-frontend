@@ -96,7 +96,7 @@ The program consists of 6 modules and each of them is responsible for something 
 ```bash
  py .\Main.py
 ```
-Program MILLIONAIRE.app connects to the enpoints on the cloud server, you don't need to create a local server.
+Program MILLIONAIRE.app connects to the enpoints on the cloud server, you don't need to create a local backend server.
 
 
 ## Lessons Learned
