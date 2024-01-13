@@ -115,7 +115,7 @@ While creating this project, I learned how to combine many programs. I've worked
 
 ## Authors
 
-- [@Grzegorz96](https://www.github.com/Grzegorz96)
+[@Grzegorz96](https://www.github.com/Grzegorz96)
 
 
 ## Contact
