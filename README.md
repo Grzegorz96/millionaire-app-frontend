@@ -135,7 +135,7 @@ E-mail: grzesstrzeszewski@gmail.com
 ![apka z oknami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/58ccf70d-99da-4838-be5c-1840164cb002)
 ##### Screenshot of the window for entering the generated activation number from the e-mail
 ![aktywacja](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/2004f0e4-f070-441e-81fa-6a02ced31fa6)
-##### Screenshot of start panel after logged in.
+##### Screenshot of start panel after logged in
 ![apka logged in](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/9cdef175-761b-45c3-bf20-4fd9bc7f26a1)
 ##### Screenshot of the add questions panel
 ![pytania](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/161bd253-1113-4a90-a6b9-8469a4cc9100)
@@ -143,13 +143,13 @@ E-mail: grzesstrzeszewski@gmail.com
 ![uzytkownik](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/40a62b7b-5231-4fc8-8fa2-cb5da70a3269)
 ##### Screenshot of the game panel
 ![gra](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d2adaff7-aa17-405a-ab40-4e8cc9db2f06)
-##### Screenshot of the selected answer in the game.
+##### Screenshot of the selected answer in the game
 ![seleced](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/788f5fd3-4cb6-435c-b2db-738f7622ec61)
-##### Screenshot of selecting the correct answer in the game.
+##### Screenshot of selecting the correct answer in the game
 ![right](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d12a189b-9126-47f6-829e-32d667f68e51)
 ##### Screenshot of using the 50/50 feature
 ![5050](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/e9cbb604-fbfb-4970-86de-57d331ec3bdf)
-##### Screenshot of choosing the wrong answer in the game.
+##### Screenshot of choosing the wrong answer in the game
 ![falilure](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a7094e29-b1b2-4030-81fd-c3d911a2f272)
 ##### Screenshot of end game panel
 ![end panel](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/62011be5-f93a-448e-84e6-276d6ad7e8bc)
