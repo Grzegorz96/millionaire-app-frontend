@@ -66,6 +66,7 @@ The program consists of 6 modules and each of them is responsible for something 
 #### Requirements:
 ##### Programs and libraries:
 - Python 3.11.1
+- IDE, for example Pycharm
 - pygame 2.5.0
 - requests 2.31.0
 #### Instruction:
