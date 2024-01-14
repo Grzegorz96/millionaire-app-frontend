@@ -1,12 +1,30 @@
 ![logo frontend](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/1b1610c8-d435-47a3-92be-df9ce009fef5)
 # MILLIONAIRE.app
 
-MILLIONAIRE.app is my original project, a clone of the popular millionaires game show. The program allows users to take on the role of a millionaire player and compete with other players in the score ranking, thanks to the system of points. All operations using data in this application are performed through the proprietary API and database at pythonanywhere hosting. This program is written and optimized for Windows.  
+MILLIONAIRE.app is my original creation, a desktop application version, serving as a clone of the popular TV game show "Who Wants to Be a Millionaire." Users can take on the role of a player and compete with other participants in a points-based ranking system. All data-related operations are conducted through a dedicated API interface and a database. Additionally, the program is designed in such a way that upon user login, a session is automatically created, lasting until logout, program exit, or automatic expiration, ensuring convenience and security in using the application through the use of JSON Web Tokens. This program is written and optimized for Windows.
 
 
 ## Description of the modules
 
-The program consists of 6 modules and each of them is responsible for something else. The Backend_requests.py module is responsible for sending and receiving API requests, Config.py contains global variables for the entire project, GUI.py is responsible for displaying graphics in the program. The Functions.py module is the link between the GUI and Backend_requests and is used to perform various functions, this module catches the new access tokens returned and overwrites the expired access tokens with them in the user object, it is also responsible for validating the data entered by the user. Decides what to do with the entered data and what to do with the received data from Backend_requests.py. It also takes care of all login/logout and registration logic. Responsible for game logic, sounds and clock. This is a very important module in the whole program. User_class.py contains the user's class and the last Main.py is the executive file for all these modules.
+The program consists of 6 modules, each of which plays a unique role in the functioning of the application. Below is a brief description of each module:
+
+Backend_requests.py:
+- The Backend_requests.py module is responsible for sending and receiving API requests. It serves as a connector to the backend, where validated data is sent to the server.
+
+Config.py:
+- The Config.py module contains global variables for the entire project. Enables the proper functioning of the program by providing global settings.
+
+GUI.py:
+- The GUI.py module is responsible for displaying graphics in the program. It initializes new graphic panels in the application and is the interface between the user and the program.
+
+Functions.py:
+- The Functions.py module serves as a connection between GUI.py and Backend_requests. Intercepts new access tokens and overwrites expired access tokens in the user object. Responsible for validating user-entered data. Decides what to do with the entered data and how to proceed with the data received from Backend_requests.py. Manages the logic of login, logout, and registration. Responsible for the game logic, sounds, and clock.
+
+User_class.py:
+- The User_class.py contains the user class, which is used to create an object that stores user data.
+
+Main.py:
+- The Main.py module is a executive file for all these modules. Acts as a connector between individual modules.
 
 
 ## Features
@@ -102,7 +120,7 @@ Program MILLIONAIRE.app connects to the enpoints on the cloud server, you don't 
 
 ## Lessons Learned
 
-While creating this project, I learned how to combine many programs. I've worked on different libraries with different technologies. I had to implement JWT tokens myself so that the frontend program could catch the returned new access tokens, overwrite the expired one in the user object and repeat the query again. I created user login and registration logic so that all processes are safe for the user. Logging in consists of 2 steps, the first is to check whether the given user is in the database, then if so, downloading his id and creating a JWT for him, the next query is a request for information about this user, using the ID and access token. Registration consists of 3 steps, the first is to check if the given user is not already in the database, the next is to check if the given email really belongs to the user by sending the user an e-mail to verify the e-mail address before registration, the last step is to place the user in the database. I think implementing these functions took me the most time but also learned a lot how to solve problems. I learned to connect with the proprietary API that performs queries on the database and how to catch bugs and handle them. I increased my skills in creating program logic. I gained knowledge about the implementation of graphic and sound files in the application. 
+During the creation of this project, I acquired the skill of integrating various programs and worked with different libraries and technologies. The necessity of independently implementing JWT tokens allowed me to capture newly returned access tokens in the frontend program, overwrite expired tokens in the user object, and repeat queries. I developed the logic for user login and registration, ensuring a secure execution of all processes. The login process consists of two steps: first, checking if the user exists in the database, and then, if so, retrieving their ID and creating a JWT token for them. The subsequent query involves obtaining information about this user using the identifier and access token. The registration process involves three steps: initially checking if the user does not already exist in the database, then verifying the authenticity of the provided email address by sending an email with activation number for address verification before registration, finally, if the user confirms the authenticity of the email address, it will be added to the database. I believe that implementing these functions was the most time-consuming, but it also taught me effective problem-solving. I learned how to connect with a dedicated API interface that conducts queries to the database and learned techniques for capturing and handling errors. Additionally, my skills in creating the logical structure of the program were enhanced, and I acquired knowledge about implementing graphic and sound files in the application.
 
 
 ## Features to be implemented
