@@ -118,7 +118,7 @@ Main.py:
 Program MILLIONAIRE.app connects to the enpoints on the cloud server, you don't need to create a local backend server.
 
 
-## Lessons Learned
+## Lessons learned
 
 During the creation of this project, I acquired the skill of integrating various programs and worked with different libraries and technologies. The necessity of independently implementing JWT tokens allowed me to capture newly returned access tokens in the frontend program, overwrite expired tokens in the user object, and repeat queries. I developed the logic for user login and registration, ensuring a secure execution of all processes. The login process consists of two steps: first, checking if the user exists in the database, and then, if so, retrieving their ID and creating a JWT token for them. The subsequent query involves obtaining information about this user using the identifier and access token. The registration process involves three steps: initially checking if the user does not already exist in the database, then verifying the authenticity of the provided email address by sending an email with activation number for address verification before registration, finally, if the user confirms the authenticity of the email address, it will be added to the database. I believe that implementing these functions was the most time-consuming, but it also taught me effective problem-solving. I learned how to connect with a dedicated API interface that conducts queries to the database and learned techniques for capturing and handling errors. Additionally, my skills in creating the logical structure of the program were enhanced, and I acquired knowledge about implementing graphic and sound files in the application.
 
