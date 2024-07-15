@@ -1,4 +1,5 @@
-![logo frontend](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/1b1610c8-d435-47a3-92be-df9ce009fef5)
+![logo](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/logo.png)
+
 # MILLIONAIRE.app
 
 MILLIONAIRE.app is my original creation, a desktop application version, serving as a clone of the popular TV game show "Who Wants to Be a Millionaire." Users can take on the role of a player and compete with other participants in a points-based ranking system. All data-related operations are conducted through a dedicated API interface and a database. Additionally, the program is designed in such a way that upon user login, a session is automatically created, lasting until logout, program exit, or automatic expiration, ensuring convenience and security in using the application through the use of JSON Web Tokens. This program is written and optimized for Windows.
@@ -149,30 +150,30 @@ E-mail: grzesstrzeszewski@gmail.com
 
 ## Screnshoots
 ##### Screenshot of the user authorization panel
-![apka](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a1fe5e2d-9e49-4e17-bfb3-f1ed88d97cec)
+![authorization_panel](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/main_label.png)
 ##### Screenshot of the login and registration window
-![apka z oknami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/58ccf70d-99da-4838-be5c-1840164cb002)
+![login_register_windows](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/login_register_windows.png)
 ##### Screenshot of the window for entering the generated activation number from the e-mail
-![aktywacja](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/2004f0e4-f070-441e-81fa-6a02ced31fa6)
+![activate_account](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/activate_account.png)
 ##### Screenshot of start panel after logged in
-![apka logged in](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/9cdef175-761b-45c3-bf20-4fd9bc7f26a1)
+![logged_in](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/logged_in.png)
 ##### Screenshot of the add questions panel
-![pytania](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/161bd253-1113-4a90-a6b9-8469a4cc9100)
+![questions_page](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/questions_page.png)
 ##### Screenshot of the user panel
-![uzytkownik](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/40a62b7b-5231-4fc8-8fa2-cb5da70a3269)
+![user_page](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/user_page.png)
 ##### Screenshot of the game panel
-![gra](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d2adaff7-aa17-405a-ab40-4e8cc9db2f06)
+![game](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/game.png)
 ##### Screenshot of the selected answer in the game
-![seleced](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/788f5fd3-4cb6-435c-b2db-738f7622ec61)
+![seleced_answer](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/selected_answer.png)
 ##### Screenshot of selecting the correct answer in the game
-![right](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/d12a189b-9126-47f6-829e-32d667f68e51)
+![right_answer](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/right_answer.png)
 ##### Screenshot of using the 50/50 feature
-![5050](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/e9cbb604-fbfb-4970-86de-57d331ec3bdf)
+![fiftyfifty](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/fiftyfifty.png)
 ##### Screenshot of choosing the wrong answer in the game
-![falilure](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/a7094e29-b1b2-4030-81fd-c3d911a2f272)
+![wrong_answer](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/wrong_answer.png)
 ##### Screenshot of end game panel
-![end panel](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/62011be5-f93a-448e-84e6-276d6ad7e8bc)
+![end panel](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/end_label.png)
 ##### Screenshot of the highscore list
-![apka z wynikami](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/b07055e6-c47f-4e70-af77-8828d4a2b2fb)
+![results](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/results.png)
 ##### Email sent from the email sender
-![email](https://github.com/Grzegorz96/millionaire-app-frontend/assets/129303867/5b353fd9-2afc-4918-9471-5cda04d8b7f2)
+![email](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/)
