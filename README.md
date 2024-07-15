@@ -176,4 +176,4 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of the highscore list
 ![results](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/results.png)
 ##### Email sent from the email sender
-![email](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/)
+![email_activation_number](https://raw.githubusercontent.com/Grzegorz96/millionaire-app-frontend/master/docs/readme-images/email_activation_number.png)
